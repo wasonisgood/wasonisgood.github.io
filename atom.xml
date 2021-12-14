@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>燃羽之翼，誰與逐鹿</title>
+  <icon>https://彭威翔.台灣/icon.png</icon>
+  <subtitle>一個放鳥人與抒發之處</subtitle>
+  <link href="https://彭威翔.台灣/atom.xml" rel="self"/>
+  
+  <link href="https://彭威翔.台灣/"/>
+  <updated>2021-08-10T10:59:39.051Z</updated>
+  <id>https://彭威翔.台灣/</id>
+  
+  <author>
+    <name>彭威翔</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>促轉會違憲爭議</title>
+    <link href="https://彭威翔.台灣/post/transitional-justice-constitution.html"/>
+    <id>https://彭威翔.台灣/post/transitional-justice-constitution.html</id>
+    <published>2021-08-10T08:58:38.000Z</published>
+    <updated>2021-08-10T10:59:39.051Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;2017年12月27日，立法院通過&amp;lt;促進轉型正義條例&amp;gt;有4大目標，推動開放政治檔案；清除威權象徵、保存不義遺址；平復司法不法、還原歷史真相，並促進社會和解，看似非常美好，但反方確有來勢洶洶的違法違憲質疑，讓我們依依分曉。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>HEXO用RSS Feed自動網頁推播</title>
+    <link href="https://彭威翔.台灣/post/hexo-web-rss-push.html"/>
+    <id>https://彭威翔.台灣/post/hexo-web-rss-push.html</id>
+    <published>2021-08-10T07:48:27.000Z</published>
+    <updated>2021-08-10T07:50:00.127Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本篇先教大家在HEXO啟用RSS Feed，在設定RSS Update(文章更新)時，進行網頁推播&lt;/p&gt;
+&lt;h2 id=&quot;Hexo新增RSS功能&quot;&gt;&lt;a href=&quot;#Hexo新增RSS功能&quot; class=&quot;headerlink&quot; title=&quot;Hexo新增RSS功能&quot;&gt;&lt;/a&gt;Hexo新增RSS功能&lt;/h2&gt;&lt;h3 id=&quot;什麼是RSS&quot;&gt;&lt;a href=&quot;#什麼是RSS&quot; class=&quot;headerlink&quot; title=&quot;什麼是RSS&quot;&gt;&lt;/a&gt;什麼是RSS&lt;/h3&gt;&lt;p&gt;RSS的英文全稱是Really Simple Syndication，是一種透過XML(eXtensible Markup Language)特性所制定的格式，讓網站的管理者可以把網頁內容傳給訂閱戶。這是個有點像電子報和新聞群組(Newsgroup)的東西，但是賦予讀者更大的自訂能力和更豐富的資料。&lt;br&gt;將RSS技術應用在獲取來源端的即時訊息是一個很重要的演進，對於使用者也可以很清楚的知道這些新聞是從何而來&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>日治朝鮮反抗史</title>
+    <link href="https://彭威翔.台灣/post/korea-jp-timeline.html"/>
+    <id>https://彭威翔.台灣/post/korea-jp-timeline.html</id>
+    <published>2021-08-07T13:14:00.000Z</published>
+    <updated>2021-08-08T08:17:14.671Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;為什麼台灣人傾向親日而朝鮮人傾向反日？這個問題應該改為：為什麼朝鮮人反抗日本的殖民統治，而台灣人有相當部分願意當日本的「狗腿」？&lt;br&gt;從1895年日本殖民台灣開始施行軍政，由台灣總督總攬行政、立法、司法大權，「軍令」成為治理台灣的法源，其後改為律令立法而推行「警察政治」，但是「總督獨裁」體制一直沒變。日本統治朝鮮的最初10年（1910-1919年），是由朝鮮總督府推行「憲兵警察政治」，警察統合了憲兵與警察官，由憲兵司令官兼任警務總監，第一任警務總監就是由憲兵司令官明石元二郎兼任，明石還於1918年轉任第七任台灣武官總督&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Fiti新點子與蘇秘會議</title>
+    <link href="https://彭威翔.台灣/post/fifi_point.html"/>
+    <id>https://彭威翔.台灣/post/fifi_point.html</id>
+    <published>2021-08-07T07:15:13.000Z</published>
+    <updated>2021-08-07T15:46:08.738Z</updated>
+    
+    
+    <summary type="html">Fiti新點子與蘇秘會議給了實用建議</summary>
+    
+    
+    
+    <category term="會議隨記" scheme="https://彭威翔.台灣/categories/%E6%9C%83%E8%AD%B0%E9%9A%A8%E8%A8%98/"/>
+    
+    
+    <category term="紀錄" scheme="https://彭威翔.台灣/tags/%E7%B4%80%E9%8C%84/"/>
+    
+    <category term="Fiti" scheme="https://彭威翔.台灣/tags/Fiti/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>開站第一文</title>
+    <link href="https://彭威翔.台灣/post/write-first-time.html"/>
+    <id>https://彭威翔.台灣/post/write-first-time.html</id>
+    <published>2021-08-05T12:08:50.000Z</published>
+    <updated>2021-08-07T15:46:08.739Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;這是我在新網站的第一篇文，我用了好多網頁技術寫Blog，但是最後竟然用回最簡單的方式&lt;/p&gt;
+&lt;h3 id=&quot;A-什麼時候會更文&quot;&gt;&lt;a href=&quot;#A-什麼時候會更文&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Blog記事" scheme="https://彭威翔.台灣/categories/Blog%E8%A8%98%E4%BA%8B/"/>
+    
+    
+    <category term="紀念" scheme="https://彭威翔.台灣/tags/%E7%B4%80%E5%BF%B5/"/>
+    
+    <category term="東奧" scheme="https://彭威翔.台灣/tags/%E6%9D%B1%E5%A5%A7/"/>
+    
+    <category term="點台灣" scheme="https://彭威翔.台灣/tags/%E9%BB%9E%E5%8F%B0%E7%81%A3/"/>
+    
+    <category term="生活" scheme="https://彭威翔.台灣/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 操作指南備份</title>
+    <link href="https://彭威翔.台灣/post/hello-world.html"/>
+    <id>https://彭威翔.台灣/post/hello-world.html</id>
+    <published>2021-08-05T12:06:37.000Z</published>
+    <updated>2021-08-07T15:46:08.740Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技術帖" scheme="https://彭威翔.台灣/categories/%E6%8A%80%E8%A1%93%E5%B8%96/"/>
+    
+    
+    <category term="Hexo" scheme="https://彭威翔.台灣/tags/Hexo/"/>
+    
+    <category term="小白教學" scheme="https://彭威翔.台灣/tags/%E5%B0%8F%E7%99%BD%E6%95%99%E5%AD%B8/"/>
+    
+  </entry>
+  
+</feed>
