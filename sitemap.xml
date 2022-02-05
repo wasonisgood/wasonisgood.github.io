@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://彭威翔.台灣/post/Lao%20Yan%20Dongfei--Facing%20the%20real%20world.html</loc>
+    
+    <lastmod>2022-02-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://彭威翔.台灣/post/write-first-time.html</loc>
+    
+    <lastmod>2022-02-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://彭威翔.台灣/manifest.json</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -45,13 +59,6 @@
   
   <url>
     <loc>https://彭威翔.台灣/post/hello-world.html</loc>
-    
-    <lastmod>2021-08-07</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://彭威翔.台灣/post/write-first-time.html</loc>
     
     <lastmod>2021-08-07</lastmod>
     
@@ -150,6 +157,34 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://彭威翔.台灣/tags/%E8%87%AA%E7%94%B1/</loc>
+    <lastmod>2022-02-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://彭威翔.台灣/tags/%E8%A2%AB%E4%B8%AD%E5%9C%8B%E7%89%86%E6%96%87%E5%82%99%E4%BB%BD/</loc>
+    <lastmod>2022-02-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://彭威翔.台灣/tags/%E4%B8%AD%E5%9C%8B/</loc>
+    <lastmod>2022-02-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://彭威翔.台灣/tags/%E6%B0%91%E4%B8%BB/</loc>
+    <lastmod>2022-02-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -168,6 +203,13 @@
   
   <url>
     <loc>https://彭威翔.台灣/categories/Blog%E8%A8%98%E4%BA%8B/</loc>
+    <lastmod>2022-02-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://彭威翔.台灣/categories/%E6%95%AC%E8%87%AA%E7%94%B1/</loc>
     <lastmod>2022-02-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
