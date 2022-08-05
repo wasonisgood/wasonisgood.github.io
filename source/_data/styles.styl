@@ -1,0 +1,183 @@
+body {
+      background:url(https://source.unsplash.com/random);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position:center center;
+}
+//自定義NOTE
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-success {
+    color: #468847;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert-info {
+    color: #3a87ad;
+    background-color: #e2eaee;
+    border-color: #c5d5dd;
+}
+.alert-warning {
+    color: #c09853;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-danger {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+//自定義文字色塊
+span#inline-blue, span#inline-green, span#inline-purple, span#inline-yellow {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 90%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    vertical-align: baseline;
+    border-radius: 0;
+    white-space: nowrap;
+}
+span#inline-blue {
+    background-color: #2780e3;
+}
+span#inline-purple {
+    background-color: #9954bb;
+}
+span#inline-yellow {
+    background-color: #f0ad4e;
+}
+span#inline-green {
+    background-color: #5cb85c;
+}
+/*修改h1前面圖標*/
+.posts-expand .post-body h1:before{
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    content: "🌈";
+    font-size: 18px;
+    line-height: 18px;
+    margin-right: 16px;
+    
+}
+
+/*修改h2前面圖標*/
+.posts-expand .post-body h2:before{
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    content: "🌞";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 18px;
+    line-height: 18px;
+    margin-right: 16px
+}
+
+/*修改h3前面圖標*/
+.posts-expand .post-body h3:before{
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    content: "🔍";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 18px;
+    line-height: 18px;
+    margin-right: 16px;
+}
+// 文章内鏈接文本樣式
+.post-body p a{
+  color: #0593d3;
+  border-bottom: none;
+  border-bottom: 1px solid #0593d3;
+  &:hover {
+    color: #fc6423;
+    border-bottom: none;
+    border-bottom: 1px solid #fc6423;
+  }
+}
+// page-opacity
+
+.post-block { 
+background: rgba(255, 255, 255, 0.85);
+}
+
+.sidebar { 
+  opacity: 0.85;
+}
+
+.header-inner { 
+  background: rgba(255,255,255,0.85);
+}
+
+.pagination { 
+  background: rgba(255,255,255,0.85);
+}
+
+.popup { 
+  opacity: 0.9;
+}
+
+.comments { 
+  opacity: 0.85;
+}
+if (hexo-config('codeblock.copy_button.style') == 'mac') {
+  .highlight-wrap {
+    background: #21252b;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .4);
+    padding-top: 30px;
+
+    &::before {
+      background: #fc625d;
+      border-radius: 50%;
+      box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+      content: ' ';
+      height: 12px;
+      left: 12px;
+      margin-top: -20px;
+      position: absolute;
+      width: 12px;
+    }
+  }
+}
+// Custom styles.
+code {
+    color: #c7254e; //文字顏色
+    background: #f9f2f4; //底色
+    margin: 2px;
+}
+// 邊框的自定義樣式
+.highlight, pre {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 3px;
+}
+.highlight, code, pre {
+    border: 1px solid #d6d6d6;
+}
+/*去掉圖片邊框*/
+.posts-expand .post-body img{
+    border: 0px;
+}
+// 修改選中文字底色
+/* webkit, opera, IE9 */
+::selection { 
+    background: #00c4b6;
+    color: #f7f7f7; 
+}
+/* firefox */
+::-moz-selection { 
+    background: #00c4b6;
+    color: #f7f7f7;
+  }
+
+
+
