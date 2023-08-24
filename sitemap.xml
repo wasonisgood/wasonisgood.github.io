@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://彭威翔.台灣/post/new-speech.html</loc>
+    
+    <lastmod>2023-08-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://彭威翔.台灣/post/CAT-in-Taiwan.html</loc>
     
     <lastmod>2023-08-24</lastmod>
@@ -37,14 +44,14 @@
   </url>
   
   <url>
-    <loc>https://彭威翔.台灣/izooto.html</loc>
+    <loc>https://彭威翔.台灣/manifest.json</loc>
     
     <lastmod>2022-08-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://彭威翔.台灣/manifest.json</loc>
+    <loc>https://彭威翔.台灣/izooto.html</loc>
     
     <lastmod>2022-08-06</lastmod>
     

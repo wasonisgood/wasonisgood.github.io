@@ -12,7 +12,13 @@ const ap = new APlayer({
   listMaxHeight: '200px',
   lrcType: 3,
   audio: [
-
+    {
+      name: '八三夭  一事無成的偉大',
+      artist: '中文',
+      url: 'https://drive.google.com/uc?export=download&id=1rclPFq26N-cJOoX345EYiC1D1tVGGD_V',
+      cover: '/music/cover/一事無成的偉大.jpg',
+      lrc: '/music/lrc/一事無成的偉大.lrc'
+    },
     {
       name: '蕭憶情 不完美小孩',
       artist: '中文',
