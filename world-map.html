@@ -24,16 +24,17 @@
         thresholdMax: 50000,
         thresholdMin: 1000
       },
-      change: {
-        name: 'Change to year before',
-        format: '{0} %'
+      policy: {
+        name: 'Policy',
+        format: '{0} '
       }
     },
     applyData: 'law',
     values: {
-      AF: {law: 'go1', change: 4.73},
-      AL: {law: 4583, change: 11.09},
-      DZ: {law: 4293, change: 10.01}
+      AF: {law: 'go1', policy:'go1'},
+      AL: {law: 'go2', policy: 'go2'},
+      DZ: {law: 'go3', policy: 'go3'},
+      TW: {law: 'go3', policy: 'go3'},
       // ...
     }
   }
@@ -45,4 +46,4 @@
     <script src="https://stephanwagner.me/js/svgmap.min.js?5f1a"></script>
     <script src="https://cdn.jsdelivr.net/gh/StephanWagner/svgMap@v2.10.1/dist/svgMap.min.js"></script>
 </body>
-</html
+</html>
