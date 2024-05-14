@@ -1,82 +1,82 @@
-// 獲取問題數據
+// 獲取問題資料
 const questionsData =[
     {
-        "question": "您收集個人數據的目的是什麼？",
+        "question": "您收集個人資料的目的是什麼？",
         "options": [
             "提供服務或商品",
-            "進行市場營銷活動",
+            "進行市場行銷活動",
             "遵守法律義務",
             "其他（請具體說明）"
         ],
         "correct_answers": [0, 2],
-        "warning": "未明確說明數據收集目的可能違反GDPR第6條的合法性原則。",
-        "gdpr_article": "GDPR 第6條要求數據處理活動必須有明確的合法基礎，例如合同履行、法定義務、或數據主體的明確同意等。",
-        "improvement_action": "確保所有數據收集活動都有明確的目的，並且這些目的符合GDPR規定的合法基礎。"
+        "warning": "未明確說明資料收集目的可能違反GDPR第6條的合法性原則。",
+        "gdpr_article": "GDPR 第6條要求資料處理活動必須有明確的合法基礎，例如合約履行、法定義務、或資料主體的明確同意等。",
+        "improvement_action": "確保所有資料收集活動都有明確的目的，並且這些目的符合GDPR規定的合法基礎。"
     },
     {
-        "question": "您的產品收集哪些類型的個人數據？",
+        "question": "您的產品收集哪些類型的個人資料？",
         "options": [
             "姓名和聯絡資料",
-            "財務信息",
-            "健康信息",
-            "其他敏感數據"
+            "財務資訊",
+            "健康資訊",
+            "其他敏感資料"
         ],
         "correct_answers": [0, 1, 2],
-        "warning": "收集不必要的個人數據或敏感數據未獲得適當同意可能違反GDPR的數據最小化原則。",
-        "gdpr_article": "GDPR 第9條及第10條特別要求對敏感個人數據（如健康、種族、性取向資訊等）進行加強保譤，並且僅在有嚴格法律依據時才允許處理。",
-        "improvement_action": "檢視現有數據收集類型，移除任何非必要或未獲授權的敏感數據類型，確保所有數據收集均符合GDPR規範。"
+        "warning": "收集不必要的個人資料或敏感資料未獲得適當同意可能違反GDPR的資料最小化原則。",
+        "gdpr_article": "GDPR 第9條及第10條特別要求對敏感個人資料（如健康、種族、性取向資訊等）進行加強保譤，並且僅在有嚴格法律依據時才允許處理。",
+        "improvement_action": "檢視現有資料收集類型，移除任何非必要或未獲授權的敏感資料類型，確保所有資料收集均符合GDPR規範。"
     },
     {
-        "question": "您如何獲得數據主體的同意？",
+        "question": "您如何獲得資料主體的同意？",
         "options": [
-            "通過網站上的勾選框",
-            "通過客戶互動時的口頭同意",
-            "通過書面同意表格",
+            "透過網站上的勾選框",
+            "透過客戶互動時的口頭同意",
+            "透過書面同意表格",
             "我們不收集同意"
         ],
         "correct_answers": [0, 2],
-        "warning": "未能有效獲得數據主體的明確同意可能違反GDPR的合法處理原則。",
-        "gdpr_article": "GDPR 第7條強調同意必須是自由給予、具體、明確且知情的。此外，數據主體應有權隨時撤回其同意。",
-        "improvement_action": "確保所有同意獲取方式都是清晰、明確的，並提供簡單的方式讓數據主體撤回同意。"
+        "warning": "未能有效獲得資料主體的明確同意可能違反GDPR的合法處理原則。",
+        "gdpr_article": "GDPR 第7條強調同意必須是自由給予、具體、明確且知情的。此外，資料主體應有權隨時撤回其同意。",
+        "improvement_action": "確保所有同意獲取方式都是清晰、明確的，並提供簡單的方式讓資料主體撤回同意。"
     },
     {
-        "question": "您是否確保只收集實現特定目的所必需的最少數據？",
+        "question": "您是否確保只收集實現特定目的所必需的最少資料？",
         "options": [
-            "是，我們嚴格限制數據收集",
-            "否，我們盡可能多收集數據",
+            "是，我們嚴格限制資料收集",
+            "否，我們盡可能多收集資料",
             "不確定"
         ],
         "correct_answers": [0],
-        "warning": "不遵守數據最小化原則可能違反GDPR的要求。",
-        "gdpr_article": "GDPR 第5條強調數據處理應當恰當、相關且限於必需的範圍。",
-        "improvement_action": "重新評估數據收集策略，確保只收集實現處理目的所必需的數據。"
+        "warning": "不遵守資料最小化原則可能違反GDPR的要求。",
+        "gdpr_article": "GDPR 第5條強調資料處理應當恰當、相關且限於必需的範圍。",
+        "improvement_action": "重新評估資料收集策略，確保只收集實現處理目的所必需的資料。"
     },
     {
-        "question": "數據主體是否可以要求訪問和轉移他們的個人數據？",
+        "question": "資料主體是否可以要求訪問和轉移他們的個人資料？",
         "options": [
             "是，他們隨時可以請求",
             "否，我們不允許訪問或轉移",
             "不確定如何處理這些請求"
         ],
         "correct_answers": [0],
-        "warning": "未允許數據主體訪問和轉移個人數據可能違反GDPR的規定。",
-        "gdpr_article": "GDPR 第15條及第20條賦予數據主體訪問及數據可攜的權利。",
-        "improvement_action": "建立或改進內部流程，以支持數據主體的訪問和數據轉移請求。"
+        "warning": "未允許資料主體訪問和轉移個人資料可能違反GDPR的規定。",
+        "gdpr_article": "GDPR 第15條及第20條賦予資料主體訪問及資料可攜的權利。",
+        "improvement_action": "建立或改進內部流程，以支持資料主體的訪問和資料轉移請求。"
     },
     {
-        "question": "數據主體是否有權更正或擦除他們的個人數據？",
+        "question": "資料主體是否有權更正或擦除他們的個人資料？",
         "options": [
             "是，應請求提供",
-            "否，我們保留數據原樣",
-            "數據從不不正確或非必需的"
+            "否，我們保留資料原樣",
+            "資料從不不正確或非必需的"
         ],
         "correct_answers": [0],
-        "warning": "未允許數據主體更正或擦除個人數據可能違反GDPR第16條和第17條的規定。",
-        "gdpr_article": "GDPR 第16條和第17條賦予數據主體更正和擦除個人數據的權利。",
-        "improvement_action": "建立或改進內部流程，以支持數據主體的更正和擦除請求。"
+        "warning": "未允許資料主體更正或擦除個人資料可能違反GDPR第16條和第17條的規定。",
+        "gdpr_article": "GDPR 第16條和第17條賦予資料主體更正和擦除個人資料的權利。",
+        "improvement_action": "建立或改進內部流程，以支持資料主體的更正和擦除請求。"
     },
     {
-        "question": "您實施了哪些措施以確保個人數據的安全？",
+        "question": "您實施了哪些措施以確保個人資料的安全？",
         "options": [
             "加密存儲和傳輸",
             "定期安全審計",
@@ -84,33 +84,33 @@ const questionsData =[
             "沒有特定措施"
         ],
         "correct_answers": [0, 1, 2],
-        "warning": "未實施足夠的數據安全措施可能違反GDPR第32條的要求。",
-        "gdpr_article": "GDPR 第32條要求採取適當的技術和組織措施來保護個人數據。",
-        "improvement_action": "評估並實施額外的安全措施，如數據加密、定期安全審計和訪問控制，以確保數據的完整性和保密性。"
+        "warning": "未實施足夠的資料安全措施可能違反GDPR第32條的要求。",
+        "gdpr_article": "GDPR 第32條要求採取適當的技術和組織措施來保護個人資料。",
+        "improvement_action": "評估並實施額外的安全措施，如資料加密、定期安全審計和訪問控制，以確保資料的完整性和保密性。"
     },
     {
-        "question": "您是否有程序用於在數據泄露發生時通知監管機構和數據主體？",
+        "question": "您是否有程序用於在資料泄露發生時通知監管機構和資料主體？",
         "options": [
             "是，72小時內",
             "否，我們沒有通知程序",
             "不確定要求"
         ],
         "correct_answers": [0],
-        "warning": "未能遵循數據泄露通報程序可能違反GDPR第33條和第34條的規定。",
-        "gdpr_article": "GDPR 第33條和第34條要求在數據泄露發生時及時通報監管機構和受影響的數據主體。",
-        "improvement_action": "建立或改進數據泄露響應和通報程序，確保在法定時間內完成通報。"
+        "warning": "未能遵循資料泄露通報程序可能違反GDPR第33條和第34條的規定。",
+        "gdpr_article": "GDPR 第33條和第34條要求在資料泄露發生時及時通報監管機構和受影響的資料主體。",
+        "improvement_action": "建立或改進資料泄露響應和通報程序，確保在法定時間內完成通報。"
     },
     {
-        "question": "您是否進行國際數據傳輸？",
+        "question": "您是否進行國際資料傳輸？",
         "options": [
             "是，並且有適當的保護措施（例如標準合約條款、適足性決定）",
             "是，但沒有具體的保護措施",
             "沒有國際傳輸"
         ],
         "correct_answers": [0],
-        "warning": "未適當管理國際數據傳輸可能違反GDPR第44條至第50條的要求。",
-        "gdpr_article": "GDPR 第44條至第50條規定了國際傳輸的條件和要求，以確保數據傳輸過程中的數據保護。",
-        "improvement_action": "評估現有的國際數據傳輸機制，確保所有傳輸均符合GDPR的規範，並實施適當的數據保護措施。"
+        "warning": "未適當管理國際資料傳輸可能違反GDPR第44條至第50條的要求。",
+        "gdpr_article": "GDPR 第44條至第50條規定了國際傳輸的條件和要求，以確保資料傳輸過程中的資料保護。",
+        "improvement_action": "評估現有的國際資料傳輸機制，確保所有傳輸均符合GDPR的規範，並實施適當的資料保護措施。"
     },
     {
         "question": "您是否保留處理活動的記錄？",
@@ -125,20 +125,20 @@ const questionsData =[
         "improvement_action": "建立記錄保存機制，確保所有處理活動均有詳細記錄，並定期審查和更新記錄。"
     },
     {
-        "question": "在數據處理中，您如何處理跨境數據流的合法性？",
+        "question": "在資料處理中，您如何處理跨境資料流的合法性？",
         "options": [
-            "確保數據傳輸符合適足性決定",
+            "確保資料傳輸符合適足性決定",
             "使用已獲批准的標準合約條款",
             "依賴企業內部規則",
-            "未特別處理跨境數據流"
+            "未特別處理跨境資料流"
         ],
         "correct_answers": [0, 1, 2],
-        "warning": "未正確管理跨境數據流可能導致違反GDPR第44條至第49條的規定。",
-        "gdpr_article": "GDPR 第44至49條詳細規範了跨境數據傳輸的法律基礎和機制，包括適足性決定、標準合約條款及企業內部規則等。",
-        "improvement_action": "評估並強化跨境數據流的合法措施，確保所有國際數據傳輸均符合GDPR規定的傳輸機制。"
+        "warning": "未正確管理跨境資料流可能導致違反GDPR第44條至第49條的規定。",
+        "gdpr_article": "GDPR 第44至49條詳細規範了跨境資料傳輸的法律基礎和機制，包括適足性決定、標準合約條款及企業內部規則等。",
+        "improvement_action": "評估並強化跨境資料流的合法措施，確保所有國際資料傳輸均符合GDPR規定的傳輸機制。"
     },
     {
-        "question": "您如何確保數據保護影響評估（DPIA）的實施及其時效性？",
+        "question": "您如何確保資料保護影響評估（DPIA）的實施及其時效性？",
         "options": [
             "只在新系統上市時進行DPIA",
             "進行定期的DPIA更新",
@@ -147,11 +147,11 @@ const questionsData =[
         ],
         "correct_answers": [1, 2],
         "warning": "未進行或未定期更新DPIA可能違反GDPR第35條的要求。",
-        "gdpr_article": "GDPR 第35條要求在可能對數據主體的權利和自由造成高風險時進行DPIA，並且需要定期更新以確保持續的數據保護。",
+        "gdpr_article": "GDPR 第35條要求在可能對資料主體的權利和自由造成高風險時進行DPIA，並且需要定期更新以確保持續的資料保護。",
         "improvement_action": "建立定期DPIA更新的流程，並確保每次變更或新技術實施前進行DPIA。"
     },
     {
-        "question": "您如何處理數據主體的異議權（包括對自動決策的異議）？",
+        "question": "您如何處理資料主體的異議權（包括對自動決策的異議）？",
         "options": [
             "提供明確的異議申請管道",
             "自動決策過程中包含人工審查的選項",
@@ -159,22 +159,22 @@ const questionsData =[
             "不確定如何處理"
         ],
         "correct_answers": [0, 1],
-        "warning": "未處理數據主體異議權可能違反GDPR第21條和第22條的規定。",
-        "gdpr_article": "GDPR 第21條和第22條賦予數據主體對於基於自動處理的決策提出異議的權利，包括剖析和預測。",
-        "improvement_action": "設立有效的異議申請管道和機制，特別是在進行自動化決策和剖析時，保障數據主體的權利得到實質性的尊重和執行。"
+        "warning": "未處理資料主體異議權可能違反GDPR第21條和第22條的規定。",
+        "gdpr_article": "GDPR 第21條和第22條賦予資料主體對於基於自動處理的決策提出異議的權利，包括剖析和預測。",
+        "improvement_action": "設立有效的異議申請管道和機制，特別是在進行自動化決策和剖析時，保障資料主體的權利得到實質性的尊重和執行。"
     },
     {
-        "question": "您如何確保僱員在處理個人數據時的合法性和安全性？",
+        "question": "您如何確保僱員在處理個人資料時的合法性和安全性？",
         "options": [
             "定期培訓和意識提升活動",
-            "實施數據訪問和處理的嚴格控制措施",
+            "實施資料訪問和處理的嚴格控制措施",
             "員工行為不在合法檢查範圍內",
             "沒有特定策略"
         ],
         "correct_answers": [0, 1],
-        "warning": "未能確保僱員在處理個人數據時的合法性可能違反GDPR第32條的規定。",
-        "gdpr_article": "GDPR 第32條要求採取適當的技術和組織措施來保證數據處理的安全性，包括保護個人數據不被未經授權或非法處理。",
-        "improvement_action": "增強員工對GDPR合法性的認識和培訓，實施有效的訪問控制和數據處理政策，確保所有員工都能遵守這些政策。"
+        "warning": "未能確保僱員在處理個人資料時的合法性可能違反GDPR第32條的規定。",
+        "gdpr_article": "GDPR 第32條要求採取適當的技術和組織措施來保證資料處理的安全性，包括保護個人資料不被未經授權或非法處理。",
+        "improvement_action": "增強員工對GDPR合法性的認識和培訓，實施有效的訪問控制和資料處理政策，確保所有員工都能遵守這些政策。"
     }
 ];
 
@@ -245,7 +245,7 @@ function renderQuestions() {
   updatePagination();
 }
 
-// 更新分頁信息和按鈕
+// 更新分頁資訊和按鈕
 function updatePagination() {
     pagination.innerHTML = '';
     const pageInfo = document.getElementById('progress-bar');
@@ -300,92 +300,137 @@ function nextPage() {
 }
 
 
-// 生成報告
 function generateReport() {
-    // 清空問卷和報告容器
-    questionnaire.innerHTML = '';
-    reportContainer.innerHTML = '';
-  
-    // 添加報告標題
-    const reportTitle = document.createElement('h1');
-    reportTitle.textContent = 'GDPR 合法性報告';
-    reportContainer.appendChild(reportTitle);
-  
-    // 渲染所有問題和選項
-    questionsData.forEach((question, index) => {
-      const card = document.createElement('div');
-      card.classList.add('question-card');
-  
-      const questionText = document.createElement('p');
-      questionText.classList.add('question-text');
-      questionText.textContent = `${index + 1}. ${question.question}`;
-  
-      const optionsContainer = document.createElement('div');
-      question.options.forEach((option, optionIndex) => {
-        const optionLabel = document.createElement('label');
-        const optionInput = document.createElement('input');
-        optionInput.type = 'checkbox';
-        optionInput.value = optionIndex;
-        optionInput.dataset.questionIndex = index;
-        optionInput.checked = userAnswers[index]?.includes(optionIndex);
-        optionInput.disabled = true;
-        optionLabel.appendChild(optionInput);
-        optionLabel.appendChild(document.createTextNode(option));
-        optionsContainer.appendChild(optionLabel);
-      });
-  
-      card.appendChild(questionText);
-      card.appendChild(optionsContainer);
-  
-      const userAnswer = userAnswers[index] || [];
-      const isCorrect = question.correct_answers.every(answer => userAnswer.includes(answer)) &&
-        userAnswer.every(answer => question.correct_answers.includes(answer));
-  
-      if (!isCorrect) {
-        card.classList.add('incorrect'); // 添加錯誤樣式
-  
-        const reportText = document.createElement('p');
-        reportText.textContent = `${index + 1}. ${question.warning}`;
-  
-        const gdprInfo = document.createElement('p');
-        gdprInfo.classList.add('gdpr-info');
-        gdprInfo.textContent = `GDPR 相關條文: ${question.gdpr_article}`;
-  
-        const improvementAction = document.createElement('p');
-        improvementAction.textContent = `改進建議: ${question.improvement_action}`;
-  
-        card.appendChild(reportText);
-        card.appendChild(gdprInfo);
-        card.appendChild(improvementAction);
-      }
-  
-      reportContainer.appendChild(card);
+  // 清空問卷和報告容器
+  questionnaire.innerHTML = '';
+  reportContainer.innerHTML = '';
+
+  // 添加報告標題
+  const reportTitle = document.createElement('h1');
+  reportTitle.textContent = 'GDPR 合法性報告';
+  reportContainer.appendChild(reportTitle);
+
+  // 渲染所有問題和選項
+  questionsData.forEach((question, index) => {
+    const card = document.createElement('div');
+    card.classList.add('question-card');
+
+    const questionText = document.createElement('p');
+    questionText.classList.add('question-text');
+    questionText.textContent = `${index + 1}. ${question.question}`;
+
+    const optionsContainer = document.createElement('div');
+    question.options.forEach((option, optionIndex) => {
+      const optionLabel = document.createElement('label');
+      const optionInput = document.createElement('input');
+      optionInput.type = 'checkbox';
+      optionInput.value = optionIndex;
+      optionInput.dataset.questionIndex = index;
+      optionInput.checked = userAnswers[index]?.includes(optionIndex);
+      optionInput.disabled = true;
+      optionLabel.appendChild(optionInput);
+      optionLabel.appendChild(document.createTextNode(option));
+      optionsContainer.appendChild(optionLabel);
     });
-  
-    // 如果所有問題都答對,顯示總體正確信息
-    if (reportContainer.children.length === 0) {
-      const successCard = document.createElement('div');
-      successCard.classList.add('question-card');
-      const successText = document.createElement('p');
-      successText.textContent = '恭喜,您已正確回答所有問題,符合GDPR規範!';
-      successCard.appendChild(successText);
-      reportContainer.appendChild(successCard);
+
+    card.appendChild(questionText);
+    card.appendChild(optionsContainer);
+
+    const userAnswer = userAnswers[index] || [];
+    const isCorrect = question.correct_answers.every(answer => userAnswer.includes(answer)) &&
+      userAnswer.every(answer => question.correct_answers.includes(answer));
+
+    if (!isCorrect) {
+      card.classList.add('incorrect'); // 添加錯誤樣式
+
+      // 修改错误选项核选方块的样式
+      card.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        if (checkbox.checked && !question.correct_answers.includes(parseInt(checkbox.value))) {
+          checkbox.classList.add('incorrect-checkbox');
+        }
+      });
+
+      const reportText = document.createElement('p');
+      reportText.textContent = `${index + 1}. ${question.warning}`;
+
+      const gdprInfo = document.createElement('p');
+      gdprInfo.classList.add('gdpr-info');
+      // 生成包含超連結的GDPR條文資訊
+      const articleNumber = question.gdpr_article.match(/第(\d+)條/);
+      if (articleNumber) {
+        const articleLink = document.createElement('a');
+        articleLink.href = `https://gdpr-info.eu/art-${articleNumber[1]}-gdpr/`;
+        articleLink.textContent = `第${articleNumber[1]}條`;
+        articleLink.target = '_blank';
+        gdprInfo.innerHTML = `GDPR 相關條文: `;
+        gdprInfo.appendChild(articleLink);
+        gdprInfo.innerHTML += question.gdpr_article.replace(`第${articleNumber[1]}條`, '');
+      } else {
+        gdprInfo.textContent = `GDPR 相關條文: ${question.gdpr_article}`;
+      }
+
+      const improvementAction = document.createElement('p');
+      improvementAction.textContent = `改進建議: ${question.improvement_action}`;
+
+      card.appendChild(reportText);
+      card.appendChild(gdprInfo);
+      card.appendChild(improvementAction);
     }
-  
-    // 隱藏分頁按鈕
-    pagination.style.display = 'none';
-  
-    // 顯示報告容器
-    reportContainer.classList.remove('hidden');
-        // 添加打印按钮
-        const printBtn = document.createElement('button');
-        printBtn.textContent = '列印報告';
-        printBtn.onclick = function() {
-            window.print();
-        };
-        reportContainer.appendChild(printBtn);
+
+    reportContainer.appendChild(card);
+  });
+
+  // 如果所有問題都答對,顯示總體正確資訊
+  if (reportContainer.children.length === 0) {
+    const successCard = document.createElement('div');
+    successCard.classList.add('question-card');
+    const successText = document.createElement('p');
+    successText.textContent = '恭喜,您已正確回答所有問題,符合GDPR規範!';
+    successCard.appendChild(successText);
+    reportContainer.appendChild(successCard);
   }
-  
+
+  // 隱藏分頁按鈕
+  pagination.style.display = 'none';
+
+  // 顯示報告容器
+  reportContainer.classList.remove('hidden');
+
+  // 添加打印按钮
+  const printBtn = document.createElement('button');
+  printBtn.textContent = '列印報告';
+  printBtn.onclick = function() {
+      window.print();
+  };
+  reportContainer.appendChild(printBtn);
+}
+
+// 添加CSS美化超連結和錯誤選項的核選方塊
+const style = document.createElement('style');
+style.innerHTML = `
+  .gdpr-info a {
+    color: #007bff;
+    text-decoration: underline;
+  }
+  .gdpr-info a:hover {
+    color: #0056b3;
+    text-decoration: none;
+  }
+  .incorrect input[type="checkbox"] {
+    background-color: #f44336;
+    border-color: #f44336;
+  }
+  .incorrect input[type="checkbox"]:checked:after {
+    content: "\\2717";
+    font-size: 14px;
+    color: #fff;
+    display: block;
+    text-align: center;
+    line-height: 16px;
+  }
+`;
+document.head.appendChild(style);
+
 // 初始渲染問題卡片
 renderQuestions();
 
