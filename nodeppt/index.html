@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDPR合法性調查</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="loading-animation">
+        <svg width="200" height="100" viewBox="0 0 200 100">
+           <path id="ai-path" fill="none" stroke="black" stroke-width="2"
+                 d="M20 80 L30 20 L40 80 M25 50 L35 50 M60 80 L60 20 L80 20 L80 80" />
+       </svg>
+   </div>
+
+
+    <header>
+        <nav id="navbar">
+            <div class="nav-logo">人權先鋒</div>
+            <div class="nav-toggle" id="nav-toggle">&#9776;</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#services">我們的服務</a></li>
+                <li><a href="#about">關於我們</a></li>
+                <li><a href="#contact">聯繫我們</a></li>
+            </ul>
+        </nav>
+        <h1>GDPR合法性調查</h1>
+        <p>通過回答以下問題,評估您的產品或服務是否符合GDPR規範。</p>
+    </header>
+
+    <main>
+        <div id="progress-bar-container">
+            <div id="progress-bar" style="width: 0%;"></div>
+        </div>
+        <div id="questionnaire"></div>
+        <div id="report-container" class="hidden"></div>
+        <div id="pagination"></div>
+    </main>
+    
+    <footer>
+        <a href="#">隱私政策</a>
+        <a href="mailto:wasonisgood@gmail.com">聯繫我們</a>
+        <p>&copy; 2024 人權先鋒</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
