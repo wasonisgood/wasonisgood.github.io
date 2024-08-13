@@ -1,0 +1,100 @@
+J Reeve (2013). How students create motivationally supportive learning environments for themselves: The concept of agentic engagement.. Journal of educational psychology, (), .
+D Davies, D Jindal-Snape, C Collier, R Digby (2013). Creative learning environments in education—A systematic literature review. Thinking skills and …, (), .
+D Boud (2012). Developing student autonomy in learning. NA, (), .
+S Land, D Jonassen (2012). Theoretical foundations of learning environments. NA, (), .
+M Hannafin, S Land, K Oliver (2013). Open learning environments: Foundations, methods, and models. Instructional-design theories and …, (), .
+H Jang, J Reeve, EL Deci (2010). Engaging students in learning activities: It is not autonomy support or structure but autonomy support and structure.. Journal of educational psychology, (), .
+AE Black, EL Deci (2000). The effects of instructors' autonomy support and students' autonomous motivation on learning organic chemistry: A self‐determination theory perspective. Science education, (), .
+PC Blumenfeld, TM Kempler, JS Krajcik (2006). Motivation and cognitive engagement in learning environments. NA, (), .
+M Vansteenkiste, J Simons, W Lens (2004). Motivating learning, performance, and persistence: the synergistic effects of intrinsic goal contents and autonomy-supportive contexts.. Journal of personality …, (), .
+P Benson (2013). Teaching and researching: Autonomy in language learning. NA, (), .
+MG Bellemare, Y Naddaf, J Veness (2013). The arcade learning environment: An evaluation platform for general agents. Journal of Artificial …, (), .
+D Nunan (2014). Designing and adapting materials to encourage learner autonomy. Autonomy and independence in language learning, (), .
+J Reeve, H Jang (2006). What teachers say and do to support students' autonomy during a learning activity.. Journal of educational psychology, (), .
+WL Johnson, JW Rickel, JC Lester (2000). Animated pedagogical agents: Face-to-face interaction in interactive learning environments. International Journal of Artificial …, (), .
+JL Moore, C Dickson-Deane, K Galyen (2011). e-Learning, online learning, and distance learning environments: Are they the same?. The Internet and higher education, (), .
+HM Huang (2002). Toward constructivism for adult learners in online learning environments. British journal of educational technology, (), .
+L Barnard, WY Lan, YM To, VO Paton, SL Lai (2009). Measuring self-regulation in online and blended learning environments. The internet and higher …, (), .
+SS Liaw, HM Huang, GD Chen (2007). Surveying instructor and learner attitudes toward e-learning. Computers & education, (), .
+L Song, JR Hill (2007). A conceptual model for understanding self-directed learning in online environments. Journal of interactive online learning, (), .
+SS Liaw, HM Huang (2013). Perceived satisfaction, perceived usefulness and interactive learning environments as predictors to self-regulation in e-learning environments. Computers & Education, (), .
+M Baeten, E Kyndt, K Struyven, F Dochy (2010). Using student-centred learning environments to stimulate deep approaches to learning: Factors encouraging or discouraging their effectiveness. Educational research review, (), .
+R Kop (2011). The challenges to connectivist learning on open online networks: Learning experiences during a massive open online course. … Review of Research in Open and Distributed Learning, (), .
+L Archambault, H Leary, K Rice (2022). Pillars of online pedagogy: A framework for teaching in online learning environments. Educational Psychologist, (), .
+V Aleven, E Stahl, S Schworm (2003). Help seeking and help design in interactive learning environments. Review of …, (), .
+MB Acat, H Anilan, SS Anagun (2010). The problems encountered in designing constructivist learning environments in science education and practical suggestions. TOJET: The Turkish Online Journal of …, (), .
+SM Land, MJ Hannafin, K Oliver (2012). Student-centered learning environments: Foundations, assumptions and design. … of learning environments, (), .
+L Wu, CK Looi (2010). Agent prompts: scaffolding students for productive reflection in an intelligent learning environment. … Tutoring Systems: 10th International Conference, ITS …, (), .
+AL Brown, JC Campione (2013). Psychological theory and the design of innovative learning environments: On procedures, principles, and systems. Innovations in learning, (), .
+JGS Goldie (2016). Connectivism: A knowledge learning theory for the digital age?. Medical teacher, (), .
+L Barnard-Brak, VO Paton, WY Lan (2010). Profiles in self-regulated learning in the online learning environment. … in Open and Distributed Learning, (), .
+E Alqurashi (2019). Predicting student satisfaction and perceived learning within online learning environments. Distance education, (), .
+D Little (2001). Learner autonomy and the challenge of tandem language. ICT and Language Learning: a European Perspective, (), .
+K Cercone (2008). Characteristics of adult learners with implications for online learning design. AACE review (formerly AACE Journal), (), .
+C Levesque, AN Zuehlke, LR Stanek (2004). Autonomy and competence in German and American university students: A comparative study based on self-determination theory.. Journal of educational …, (), .
+Z Pan, AD Cheok, H Yang, J Zhu, J Shi (2006). Virtual reality and mixed reality for virtual learning environments. Computers & graphics, (), .
+N Dabbagh, A Kitsantas (2012). Personal Learning Environments, social media, and self-regulated learning: A natural formula for connecting formal and informal learning. The Internet and higher education, (), .
+MC Linn, EA Davis, P Bell (2013). Internet environments for science education. NA, (), .
+LM Blaschke (2012). Heutagogy and lifelong learning: A review of heutagogical practice and self-determined learning. … Review of Research in Open and Distributed Learning, (), .
+R Kop, H Fournier, JSF Mak (2011). A pedagogy of abundance or a pedagogy to support human beings? Participant support on massive open online courses. … Research in Open and Distributed Learning, (), .
+M Tam (2000). Constructivism, instructional design, and technology: Implications for transforming distance learning. Journal of Educational Technology & Society, (), .
+HJ Freiberg (2005). School climate: Measuring, improving and sustaining healthy learning environments. NA, (), .
+RSJ Baker, SK D'Mello, MMT Rodrigo (2010). … bored: The incidence, persistence, and impact of learners' cognitive–affective states during interactions with three different computer-based learning environments. International Journal of …, (), .
+MB Horn, H Staker (2011). The rise of K–12 blended learning. Social Innovations Journal, (), .
+C Chen, A Seff, A Kornhauser (2015). Deepdriving: Learning affordance for direct perception in autonomous driving. Proceedings of the IEEE …, (), .
+H Tüzün, M Yılmaz-Soylu, T Karakuş, Y Inal (2009). The effects of computer games on primary school students' achievement and motivation in geography learning. Computers & …, (), .
+S Hurtado, CL Alvarez, C Guillermo-Wann (2012). A model for diverse learning environments: The scholarship on creating and assessing conditions for student success. … Education: Handbook of …, (), .
+E Sierens, M Vansteenkiste, L Goossens (2009). The synergistic relationship of perceived autonomy support and structure in the prediction of self‐regulated learning. British Journal of …, (), .
+F Wang, MJ Hannafin (2005). Design-based research and technology-enhanced learning environments. Educational technology research and …, (), .
+J Cabero-Almenara, ML Arancibia (2019). Technical and didactic knowledge of the Moodle LMS in higher education. Beyond functional use. Journal of New …, (), .
+L Abeysekera, P Dawson (2015). Motivation and cognitive load in the flipped classroom: definition, rationale and a call for research. Higher education research & …, (), .
+Y Park (2011). A pedagogical framework for mobile learning: Categorizing educational applications of mobile technologies into four types. … Review of Research in Open and Distributed Learning, (), .
+YH Sally Wu, ST Alan Hung (2022). The Effects of virtual reality infused instruction on Elementary School Students' English-Speaking performance, willingness to Communicate, and learning autonomy. Journal of Educational …, (), .
+C McLoughlin, MJW Lee (2010). Personalised and self regulated learning in the Web 2.0 era: International exemplars of innovative pedagogy using social software. Australasian Journal of Educational …, (), .
+M Kearney, S Schuck, K Burden (2012). Viewing mobile learning from a pedagogical perspective. … In Learning …, (), .
+C Rapanta, L Botturi, P Goodyear, L Guàrdia (2020). Online university teaching during and after the Covid-19 crisis: Refocusing teacher presence and learning activity. Postdigital science and …, (), .
+J Reeve (2012). A self-determination theory perspective on student engagement. Handbook of research on student engagement, (), .
+P Buckley, E Doyle (2016). Gamification and student motivation. Interactive learning environments, (), .
+P Benson (2007). Autonomy in language teaching and learning. Language teaching, (), .
+C Bryson, L Hand (2007). The role of engagement in inspiring teaching and learning. Innovations in education and teaching …, (), .
+SMM Loyens, J Magda, RMJP Rikers (2008). Self-directed learning in problem-based learning and its relationships with self-regulated learning. Educational psychology review, (), .
+R Boelens, B De Wever, M Voet (2017). Four key challenges to the design of blended learning: A systematic literature review. Educational research review, (), .
+SS Liaw (2008). Investigating students' perceived satisfaction, behavioral intention, and effectiveness of e-learning: A case study of the Blackboard system. Computers & education, (), .
+SO Bada, S Olusegun (2015). Constructivism learning theory: A paradigm for teaching and learning. Journal of Research & Method in Education, (), .
+BR Kiran, I Sobh, V Talpaert, P Mannion (2021). Deep reinforcement learning for autonomous driving: A survey. IEEE Transactions …, (), .
+H Kauffman (2015). A review of predictive factors of student success in and satisfaction with online learning. Research in Learning Technology, (), .
+GJ Hwang, CC Tsai, SJH Yang (2008). Criteria, strategies and research issues of context-aware ubiquitous learning. Journal of Educational Technology & …, (), .
+TA Mikropoulos, A Natsis (2011). Educational virtual environments: A ten-year review of empirical research (1999–2009). Computers & education, (), .
+JL McBrien, R Cheng, P Jones (2009). Virtual spaces: Employing a synchronous online classroom to facilitate student engagement in online learning. … research in open and distributed learning, (), .
+RL Dunbar, MJ Dingel, LF Dame (2018). Student social self-efficacy, leadership status, and academic performance in collaborative learning environments. Studies in Higher …, (), .
+AEL Sallab, M Abdou, E Perot, S Yogamani (2017). Deep reinforcement learning framework for autonomous driving. arXiv preprint arXiv …, (), .
+S Zhou, FF Xu, H Zhu, X Zhou, R Lo, A Sridhar (2023). Webarena: A realistic web environment for building autonomous agents. arXiv preprint arXiv …, (), .
+KC Chen, SJ Jang (2010). Motivation in online learning: Testing a model of self-determination theory. Computers in human behavior, (), .
+P Bell, MC Linn (2000). Scientific arguments as learning artifacts: Designing for learning from the web with KIE. International journal of science education, (), .
+J Reeve (2006). Teachers as facilitators: What autonomy-supportive teachers do and why their students benefit. The elementary school journal, (), .
+B Dalgarno, MJW Lee (2010). What are the learning affordances of 3‐D virtual environments?. British journal of educational …, (), .
+J Parsons, L Taylor (2011). Improving student engagement. Current issues in education, (), .
+K Karataş, İ Arpacı (2021). The role of self-directed learning, metacognition, and 21st century skills predicting the readiness for online learning. NA, (), .
+I Clark (2012). Formative assessment: Assessment is for self-regulated learning. Educational psychology review, (), .
+L Bloomfield (2007). Evaluation of the clinical learning environment for radiation oncology specialty training. Focus on Health Professional Education: A Multi …, (), .
+MC English, A Kitsantas (2013). Supporting student self-regulated learning in problem-and project-based learning. … journal of problem-based learning, (), .
+CR Stefanou, KC Perencevich, M DiCintio (2004). Supporting autonomy in the classroom: Ways teachers encourage student decision making and ownership. Educational …, (), .
+R Maulana, MC Opdenakker, K Stroet (2013). Changes in teachers' involvement versus rejection and links with academic motivation during the first year of secondary education: A multilevel growth curve analysis. Journal of youth and …, (), .
+L David, N Weinstein (2024). Using technology to make learning fun: technology use is best made fun and challenging to optimize intrinsic motivation and engagement. European Journal of Psychology of Education, (), .
+E Ushioda (2009). A person-in-context relational view of emergent motivation, self and identity. Motivation, language identity and the L2 self, (), .
+G Kessler (2009). Student-initiated attention to form in wiki-based collaborative writing. NA, (), .
+WY Ip, DSK Chan (2005). Hong Kong nursing students' perception of the clinical environment: a questionnaire survey. International journal of nursing studies, (), .
+CF Ratelle, F Guay, RJ Vallerand (2007). Autonomous, controlled, and amotivated types of academic motivation: A person-oriented analysis.. Journal of …, (), .
+P Yue, J Xin, H Zhao, D Liu, M Shan (2019). Experimental research on deep reinforcement learning in autonomous navigation of mobile robot. 2019 14th IEEE …, (), .
+MJW Thomas (2002). Learning within incoherent structures: The space of online discussion forums. Journal of Computer Assisted Learning, (), .
+RA Rasheed, A Kamsin, NA Abdullah (2020). Challenges in the online component of blended learning: A systematic review. Computers & education, (), .
+MT Wang, JS Eccles (2013). School context, achievement motivation, and academic engagement: A longitudinal study of school engagement using a multidimensional perspective. Learning and instruction, (), .
+MK Barbour, TC Reeves (2009). The reality of virtual schools: A review of the literature. Computers & Education, (), .
+J Reeve (2009). Why teachers adopt a controlling motivating style toward students and how they can become more autonomy supportive. Educational psychologist, (), .
+Y Karagiorgi, L Symeou (2005). Translating constructivism into instructional design: Potential and limitations. Journal of Educational Technology & Society, (), .
+R Beckers, T Van der Voordt (2016). Why do they study there? Diary research into students' learning space choices in higher education. Higher education research …, (), .
+JC Turner, C Midgley, DK Meyer, M Gheen (2002). The classroom environment and students' reports of avoidance strategies in mathematics: A multimethod study.. Journal of …, (), .
+J Mackness, S Mak, R Williams (2010). The ideals and reality of participating in a MOOC. … on networked learning …, (), .
+P Van den Bossche, WH Gijselaers (2006). Social and cognitive factors driving teamwork in collaborative learning environments: Team learning beliefs and behaviors. Small group …, (), .
+B Ciloglugil, MM Inceoglu (2017). Exploiting agents and artifacts metamodel to provide abstraction of e-learning resources. … Conference on Advanced Learning …, (), .
+S Grigorescu, B Trasnea, T Cocias (2020). A survey of deep learning techniques for autonomous driving. Journal of field …, (), .
