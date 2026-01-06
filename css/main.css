@@ -1075,12 +1075,12 @@ pre .javascript .function {
   margin: 10px 0;
 }
 .use-motion .brand {
-  opacity: 0;
+  opacity: 1;
 }
 .use-motion .site-title,
 .use-motion .site-subtitle,
 .use-motion .custom-logo-image {
-  opacity: 0;
+  opacity: 1;
   position: relative;
   top: -10px;
 }
@@ -1178,7 +1178,7 @@ pre .javascript .function {
   background: var(--menu-item-bg-color);
 }
 .use-motion .menu-item {
-  opacity: 0;
+  opacity: 1;
 }
 .sidebar {
   background: #222;
@@ -1625,16 +1625,16 @@ pre .javascript .function {
 .use-motion .post-block,
 .use-motion .pagination,
 .use-motion .comments {
-  opacity: 0;
+  opacity: 1;
 }
 .use-motion .post-header {
-  opacity: 0;
+  opacity: 1;
 }
 .use-motion .post-body {
-  opacity: 0;
+  opacity: 1;
 }
 .use-motion .collection-header {
-  opacity: 0;
+  opacity: 1;
 }
 .posts-collapse {
   margin-left: 35px;
