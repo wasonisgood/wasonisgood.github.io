@@ -2718,11 +2718,9 @@ ul.breadcrumb li + li:last-child {
   max-width: unset;
 }
 body {
-  background: url("https://source.unsplash.com/random");
+  background: url("../images/bg.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
+  background-color: var(--body-bg-color);
 }
 .alert {
   padding: 15px;
