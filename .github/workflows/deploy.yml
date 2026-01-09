@@ -1,0 +1,38 @@
+name: Hexo Deploy
+
+on:
+  push:
+    branches:
+      - code  # 監聽 code 分支的變動
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+        with:
+          submodules: true # 如果有使用 submodule (例如主題)，需要開啟
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # 使用較新的 Node 版本
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npx hexo generate
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: master  # 部署到 master 分支
+          publish_dir: ./public   # Hexo 生成的目錄
+          commit_message: "Deploy: ${{ github.event.head_commit.message }}"
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
