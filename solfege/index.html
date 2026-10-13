@@ -59,7 +59,8 @@ h1,h2,h3,p{margin:0}
 .chap .rng{font:500 13px var(--f-num);color:var(--mut)}
 .chap .mel{font:400 15px var(--f-story);color:var(--mut)}
 .chap .mel b{color:var(--brass);font-weight:700}
-.path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;position:relative}
+.path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;position:relative}
+@media(min-width:620px){.path{grid-template-columns:repeat(6,minmax(0,1fr))}}
 .node{display:grid;justify-items:center;gap:3px;border:0;background:none;padding:4px 0;text-align:center}
 .node .c{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--paper);color:var(--ink);font:800 17px var(--f-num);border:3px solid var(--paper2);box-shadow:0 4px 0 #0005}
 .node.boss .c{background:var(--ink);color:var(--brass);border-color:var(--brass);width:64px;height:64px}
@@ -170,46 +171,51 @@ const COL=['#E0483E','#F08A24','#D9B21C','#3FA957','#1FA5B8','#3D6FE0','#8C55D6'
 const pc=d=>((d%7)+7)%7,oc=d=>4+Math.floor(d/7),nm=d=>LET[pc(d)]+oc(d);
 const freq=d=>440*Math.pow(2,(12*(oc(d)+1)+SEMI[pc(d)]-69)/12);
 const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
-const POSN={0:'下加一線(中央C)',1:'第一線下面',2:'第一線',3:'第一間',4:'第二線(譜譜捲住的線)',5:'第二間',6:'第三線',7:'第三間',8:'第四線',9:'第四間',10:'第五線',11:'第五線上面',12:'上加一線',13:'上加一線上面',14:'上加二線'};
+const POSN={'-2':'下加二線','-1':'下加一間',0:'下加一線(中央 Do)',1:'下一間',2:'第一線',3:'第一間',4:'第二線(譜譜捲住的線)',5:'第二間',6:'第三線',7:'第三間',8:'第四線',9:'第四間',10:'第五線',11:'上一間',12:'上加一線',13:'上加一間',14:'上加二線'};
+const kn=d=>{const o=oc(d);return (o>=6?'高高音 ':o===5?'高音 ':o<=3?'低音 ':'')+SYL[pc(d)]};
 const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
-const SV=Object.assign({stars:{},best:{},seen:{},lab:'both',color:true,stats:{}},store.get('lm.save',{}));
-const save=()=>store.set('lm.save',SV);
+const SV=Object.assign({stars:{},best:{},seen:{},lab:'both',color:true,stats:{}},store.get('lm2.save',{}));
+const save=()=>store.set('lm2.save',SV);
 const keyLab=p=>SV.lab==='syl'?`<b>${SYL[p]}</b>`:SV.lab==='let'?`<b>${LET[p]}</b>`:`<b>${SYL[p]}</b><i>${LET[p]}</i>`;
 const txt=d=>SV.lab==='syl'?SYL[pc(d)]:SV.lab==='let'?LET[pc(d)]:SYL[pc(d)]+' '+LET[pc(d)];
 
 /* ===== story data ===== */
 const MEL=[
- {t:'瑪莉有隻小綿羊',d:[2,1,0,1,2,2,2,1,1,1,2,4,4],r:[1,1,1,1,1,1,2,1,1,2,1,1,2]},
- {t:'歡樂頌',d:[9,9,10,11,11,10,9,8,7,7,8,9,9,8,8],r:[1,1,1,1,1,1,1,1,1,1,1,1,1.5,.5,2]},
- {t:'小星星',d:[0,0,4,4,5,5,4,3,3,2,2,1,1,0],r:[1,1,1,1,1,1,2,1,1,1,1,1,1,2]},
+ {t:'瑪莉有隻小綿羊',d:[9,8,7,8,9,9,9,8,8,8,9,11,11],r:[1,1,1,1,1,1,2,1,1,2,1,1,2]},
  {t:'倫敦鐵橋',d:[11,12,11,10,9,10,11,8,9,10,9,10,11],r:[1.5,.5,1,1,1,1,2,1,1,2,1,1,2]},
+ {t:'小星星',d:[0,0,4,4,5,5,4,3,3,2,2,1,1,0],r:[1,1,1,1,1,1,2,1,1,1,1,1,1,2]},
+ {t:'歡樂頌',d:[9,9,10,11,11,10,9,8,7,7,8,9,9,8,8],r:[1,1,1,1,1,1,1,1,1,1,1,1,1.5,.5,2]},
  {t:'小蜜蜂',d:[4,2,2,3,1,1,0,1,2,3,4,4,4],r:[1,1,2,1,1,2,1,1,1,1,1,1,2]}];
 const CH=[
- {n:'中央C村',r:'C4–G4',bg:'#2E5132'},{n:'五線森林',r:'E4–G5',bg:'#24493A'},{n:'回音洞窟',r:'C4–C5',bg:'#272E4A'},{n:'雲梯加線塔',r:'C4–C6',bg:'#2B4458'},{n:'靜默王座',r:'C4–C6',bg:'#3E2B3A'}];
+ {n:'五線村',r:'五線之內',bg:'#2E5132'},{n:'雲梯塔',r:'上加線',bg:'#2B4458'},{n:'地底礦坑',r:'下加線',bg:'#3B3526'},{n:'回音洞窟',r:'用耳朵聽',bg:'#272E4A'},{n:'靜默王座',r:'全部混合',bg:'#3E2B3A'}];
 const P='pupu',K='king',N='narr';
 const STAGES=[
- {id:'1-1',ch:0,n:'村口的雜音',type:'read',lo:0,hi:4,cnt:6,sp:24,gap:3.6,say:[[P,'村裡只有五個音:Do Re Mi Fa Sol。中央C 踩在一條短短的加線上,最好認。'],[P,'雜音怪會從右邊走過來。按下最前面那一隻的唱名,把它變回音符!']]},
- {id:'1-2',ch:0,n:'麥田裡的 Do Re Mi',type:'read',lo:0,hi:4,cnt:10,sp:30,gap:2.9,say:[[P,'這次牠們跑得比較快。先看它在線上還是間上,再從中央C 往上數。']]},
- {id:'1-3',ch:0,n:'名字的封印',type:'sealN',lo:0,hi:4,cnt:6,time:13,say:[[P,'有些音符被封進了名字裡。看泡泡裡的名字,把音符畫回譜上,就能解開封印。'],[P,'手機上點譜表選位置,再按「放下音符」。電腦可以直接點。']]},
- {id:'1-B',ch:0,n:'守門的低音怪',type:'boss',boss:'低音怪',lo:0,hi:4,rounds:3,len:3,subs:['read'],time:15,say:[[K,'嘿嘿,想進森林?先把我寫的三個音一口氣叫出來!'],[P,'牠一次出三個音,要從左到右依序回答。']]},
- {id:'2-1',ch:1,n:'樹根旁的線',type:'read',lo:2,hi:7,cnt:10,sp:30,gap:3,say:[[P,'五線森林到了!五條線由下往上是 Mi Sol Si Re Fa,也就是 E G B D F。'],[P,'我捲住的第二線就是 Sol,可以拿它當地標。']]},
- {id:'2-2',ch:1,n:'高枝上的間',type:'read',lo:6,hi:11,cnt:10,sp:32,gap:2.9,say:[[P,'樹梢上住著高一點的音。第三間是高音 Do,四個間由下往上是 F A C E。']]},
- {id:'2-3',ch:1,n:'森林的封印',type:'sealN',lo:2,hi:11,cnt:8,time:11,say:[[P,'名字後面的數字代表高低:E4 在第一線,E5 在第四間。']]},
- {id:'2-B',ch:1,n:'森林守衛',type:'boss',boss:'木頭守衛',lo:2,hi:11,rounds:4,len:4,subs:['read'],time:18,say:[[K,'四個音一組,一個都不准錯過!'],[P,'別緊張,答錯只會扣時間。']]},
- {id:'3-1',ch:2,n:'洞口的回聲',type:'hear',lo:0,hi:4,cnt:8,sp:19,gap:5,say:[[P,'洞窟太暗了,看不見雜音怪,只聽得到牠們的聲音。'],[P,'聽不出來的時候,按「中央C」比一比,或按「再聽」。']]},
- {id:'3-2',ch:2,n:'深處的回聲',type:'hear',lo:0,hi:7,cnt:10,sp:21,gap:4.6,say:[[P,'越往深處,音域越寬。打倒牠以後,我會告訴你牠原本站在譜上哪裡。']]},
- {id:'3-3',ch:2,n:'聲音的封印',type:'sealH',lo:0,hi:7,cnt:6,time:15,say:[[P,'這次的封印只有聲音。聽,然後把音符畫到正確的線或間上。']]},
- {id:'3-B',ch:2,n:'回音蝙蝠王',type:'boss',boss:'蝙蝠王',lo:0,hi:7,rounds:3,len:3,subs:['hear'],time:20,say:[[K,'我唱,你回答。看不見我,你辦得到嗎?'],[P,'先聽完整句,再一個一個回答。']]},
- {id:'4-1',ch:3,n:'塔底的加線',type:'read',lo:0,hi:14,cnt:12,sp:32,gap:2.7,say:[[P,'雲梯塔很高,音會跑到五線外。下加一線是中央 Do,上加一線是 La,上加二線是高音 Do。']]},
- {id:'4-2',ch:3,n:'雲端的封印',type:'sealN',lo:0,hi:14,cnt:8,time:11,say:[[P,'G4 和 G5 都唱 Sol,但差了一個八度,要畫在不同位置。']]},
- {id:'4-3',ch:3,n:'塔頂的風聲',type:'hear',lo:2,hi:11,cnt:10,sp:23,gap:4.4,say:[[P,'起風了,只聽得到聲音。仔細分辨它往上還是往下。']]},
- {id:'4-B',ch:3,n:'風暴指揮',type:'boss',boss:'風暴指揮',lo:0,hi:14,rounds:4,len:4,subs:['read','hear'],time:20,say:[[K,'看譜、聽音,我會輪流出招!']]},
- {id:'5-1',ch:4,n:'王座前的大軍',type:'read',lo:0,hi:14,cnt:16,sp:40,gap:2.2,say:[[P,'靜默王的城堡就在前面,所有雜音怪都出動了!'],[P,'連續答對 6 次,我可以幫你補回一顆心。']]},
- {id:'5-2',ch:4,n:'最後的封印',type:'sealH',lo:2,hi:11,cnt:8,time:13,say:[[P,'最後的封印,只剩聲音能指路。']]},
- {id:'5-B',ch:4,n:'靜默王',type:'boss',boss:'靜默王',lo:0,hi:14,rounds:5,len:5,subs:['read','hear'],time:24,say:[[K,'沒有聲音的世界多安靜啊……你真的要把歌全部還回去?'],[P,'就是要!我們一起把最後一首歌唱回來!']]}];
+ {id:'1-1',ch:0,n:'村口的雜音',type:'read',lo:2,hi:10,cnt:5,sp:16,gap:5.2,say:[[P,'五線村裡的音,全都住在五條線和四個間裡,不會跑出去。'],[P,'雜音怪會從右邊慢慢走過來。按下最前面那一隻的唱名,把牠變回音符!']]},
+ {id:'1-2',ch:0,n:'線上的音',type:'read',lo:2,hi:10,cnt:5,sp:17,gap:5,say:[[P,'五條線由下往上是 Mi Sol Si Re Fa。音符的頭被線穿過,就是「在線上」。']]},
+ {id:'1-3',ch:0,n:'間裡的音',type:'read',lo:2,hi:10,cnt:5,sp:18,gap:4.8,say:[[P,'四個間由下往上是 Fa La Do Mi。音符的頭夾在兩條線中間,就是「在間裡」。']]},
+ {id:'1-4',ch:0,n:'再練一次',type:'read',lo:2,hi:10,cnt:8,sp:19,gap:4.5,say:[[P,'這次多幾隻。不急,看清楚再按。']]},
+ {id:'1-5',ch:0,n:'名字的封印',type:'sealN',lo:2,hi:8,cnt:5,time:18,say:[[P,'有些音符被封進了名字裡。看泡泡裡的唱名,把音符畫回譜上。'],[P,'手機上點譜表選位置,再按「放下音符」。電腦可以直接點。']]},
+ {id:'1-B',ch:0,n:'守門的低音怪',type:'boss',boss:'低音怪',lo:2,hi:10,rounds:3,len:3,subs:['read'],time:22,say:[[K,'嘿嘿,想往上爬?先把我寫的三個音一口氣叫出來!'],[P,'牠一次出三個音,從左到右依序回答。']]},
+ {id:'2-1',ch:1,n:'第一道雲梯',type:'read',lo:8,hi:12,cnt:5,sp:16,gap:5.2,say:[[P,'雲梯塔的音會爬到五線上面。第五線上面的間叫「上一間」,是 Sol。'],[P,'再往上要多畫一條短短的線,叫「上加一線」,是 La。']]},
+ {id:'2-2',ch:1,n:'第二道雲梯',type:'read',lo:9,hi:14,cnt:5,sp:17,gap:5,say:[[P,'上加一線上面是「上加一間」Si,再上去是「上加二線」高音 Do。數短線的數目就知道有多高。']]},
+ {id:'2-3',ch:1,n:'塔裡的練習',type:'read',lo:6,hi:14,cnt:8,sp:19,gap:4.5,say:[[P,'五線裡和上加線的音混在一起了,先看有沒有短短的加線。']]},
+ {id:'2-4',ch:1,n:'雲端的封印',type:'sealN',lo:9,hi:14,cnt:5,time:18,say:[[P,'把泡泡裡的唱名畫回譜上。需要加線的話,我會幫你畫好短線。']]},
+ {id:'2-B',ch:1,n:'塔頂守衛',type:'boss',boss:'塔頂守衛',lo:8,hi:14,rounds:3,len:3,subs:['read'],time:22,say:[[K,'塔頂的音你認得嗎?三個一組,來吧!']]},
+ {id:'3-1',ch:2,n:'礦坑入口',type:'read',lo:-1,hi:3,cnt:5,sp:16,gap:5.2,say:[[P,'地底礦坑的音住在五線下面。第一線下面的間叫「下一間」,是 Re。'],[P,'再往下多一條短線,叫「下加一線」,就是中央 Do!']]},
+ {id:'3-2',ch:2,n:'更深的礦道',type:'read',lo:-2,hi:2,cnt:5,sp:17,gap:5,say:[[P,'下加一線下面是「下加一間」Si,再往下是「下加二線」La。它們比中央 Do 還低。']]},
+ {id:'3-3',ch:2,n:'礦坑裡的練習',type:'read',lo:-2,hi:6,cnt:8,sp:19,gap:4.5,say:[[P,'下加線和五線裡的音混在一起了,先數短線。']]},
+ {id:'3-4',ch:2,n:'地底的封印',type:'sealN',lo:-2,hi:4,cnt:5,time:18,say:[[P,'把唱名畫回譜上,記得往下數。']]},
+ {id:'3-B',ch:2,n:'礦坑地鼠王',type:'boss',boss:'地鼠王',lo:-2,hi:6,rounds:3,len:3,subs:['read'],time:22,say:[[K,'地底下的音,看你認不認得!']]},
+ {id:'4-1',ch:3,n:'洞口的回聲',type:'hear',lo:0,hi:4,cnt:5,sp:14,gap:6.5,say:[[P,'洞窟太暗了,看不見雜音怪,只聽得到牠們的聲音。'],[P,'聽不出來的時候,按「中央 Do」比一比,或按「再聽」。']]},
+ {id:'4-2',ch:3,n:'深處的回聲',type:'hear',lo:0,hi:7,cnt:6,sp:15,gap:6.2,say:[[P,'打倒牠以後,我會告訴你牠原本站在譜上哪裡。']]},
+ {id:'4-3',ch:3,n:'聲音的封印',type:'sealH',lo:0,hi:6,cnt:5,time:20,say:[[P,'這次的封印只有聲音。聽,然後把音符畫到正確的線或間上。']]},
+ {id:'4-B',ch:3,n:'回音蝙蝠王',type:'boss',boss:'蝙蝠王',lo:0,hi:7,rounds:3,len:3,subs:['hear'],time:26,say:[[K,'我唱,你回答。看不見我,你辦得到嗎?'],[P,'先聽完整句,再一個一個回答。']]},
+ {id:'5-1',ch:4,n:'王座前的大軍',type:'read',lo:-2,hi:14,cnt:12,sp:21,gap:4,say:[[P,'靜默王的城堡就在前面,五線裡、上加線、下加線的雜音怪全都來了!'],[P,'連續答對 6 次,我可以幫你補回一顆心。']]},
+ {id:'5-2',ch:4,n:'最後的封印',type:'sealN',lo:-2,hi:14,cnt:6,time:18,say:[[P,'同一個唱名可能有高有低。泡泡寫「高音」就畫高的那個,寫「低音」就畫低的那個。']]},
+ {id:'5-B',ch:4,n:'靜默王',type:'boss',boss:'靜默王',lo:-2,hi:14,rounds:4,len:4,subs:['read','hear'],time:28,say:[[K,'沒有聲音的世界多安靜啊……你真的要把歌全部還回去?'],[P,'就是要!我們一起把最後一首歌唱回來!']]}];
 const PROLOGUE=[[N,'旋律王國的每一個音,本來都知道自己的名字。'],[N,'某天夜裡,靜默王偷走了五首古老的歌。音符們忘了自己是誰,變成到處亂跑的雜音怪。'],[P,'你好!我是譜譜,高音譜號的精靈。'],[P,'只要叫出雜音怪真正的名字,牠們就會變回音符。記住:在這個王國,C 永遠唱 Do。'],[P,'我們一關一關把五首歌找回來吧!']];
 const ENDING=[[N,'最後一首〈小蜜蜂〉回到了王國,城裡又響起了歌聲。'],[K,'……原來,有聲音的世界也不壞。'],[P,'謝謝你,譜行者!以後不管看到還是聽到什麼音,你都叫得出它的名字了。'],[P,'想再挑戰的話,「無盡挑戰」隨時等著你。']];
-const CHEND=['你找回了〈瑪莉有隻小綿羊〉!聽,音符們想起自己的名字了。','〈歡樂頌〉回到森林了!下一站是回音洞窟。','〈小星星〉在洞窟裡亮了起來!前面就是雲梯加線塔。','〈倫敦鐵橋〉找回來了!靜默王的城堡就在雲的另一端。'];
+const CHEND=['你找回了〈瑪莉有隻小綿羊〉!五線裡的音你都認得了,接下來去雲梯塔。','〈倫敦鐵橋〉回到塔頂了!上加線難不倒你。下一站是地底礦坑。','〈小星星〉在礦坑裡亮了起來!下加線也學會了。接著去回音洞窟,用耳朵聽。','〈歡樂頌〉找回來了!靜默王的城堡就在前面。'];
 
 /* ===== audio ===== */
 let AC=null,master=null,bus=null;
@@ -271,18 +277,18 @@ function renderBook(){scr.innerHTML=`<div class="scr"><div class="topbar"><butto
   <div class="book">${MEL.map((m,i)=>{const got=!!SV.stars[STAGES.filter(s=>s.ch===i).pop().id];
    return `<section class="panel" style="display:grid;gap:10px">${got?`<div class="row" style="align-items:center"><span class="meltitle" style="flex:1">〈${m.t}〉</span><button class="btn sm main" data-act="mel" data-i="${i}">▶ 播放</button></div><div class="melbox" id="mel${i}">${melSVG(m)}</div><p class="mut">一邊聽,一邊跟著譜唱唱名。</p>`:`<p class="lockd">第 ${i+1} 章「${CH[i].n}」打倒守關者後找回。</p>`}</section>`}).join('')}</div></div>`}
 let codexSel=null;
-function renderCodex(){const W=540,x0=76,dx=(W-x0-16)/15,G=geo(-2,16);let s=`<svg viewBox="0 0 ${W} ${G.Ht}">`+staffBase(G,W)+clefG(G);
-  for(let d=0;d<=14;d++){const x=x0+(d+.5)*dx;s+=noteG(G,d,x,codexSel===d?'rev':(codexSel!=null&&pc(codexSel)===pc(d)?'gold':''));
-    s+=`<text class="mlbl" x="${x}" y="${G.Ht-16}">${SYL[pc(d)]}</text><text class="mlbl" style="font-weight:500" x="${x}" y="${G.Ht-4}">${nm(d)}</text><rect data-cd="${d}" x="${x-15}" y="0" width="30" height="${G.Ht}" fill="transparent" style="cursor:pointer"/>`}
+function renderCodex(){const W=600,x0=76,dx=(W-x0-12)/17,G=geo(-2,16);let s=`<svg viewBox="0 0 ${W} ${G.Ht}">`+staffBase(G,W)+clefG(G);
+  for(let d=-2;d<=14;d++){const x=x0+(d+2.5)*dx;s+=noteG(G,d,x,codexSel===d?'rev':(codexSel!=null&&pc(codexSel)===pc(d)?'gold':''));
+    s+=`<text class="mlbl" x="${x}" y="${G.Ht-16}">${SYL[pc(d)]}</text><text class="mlbl" style="font-weight:500" x="${x}" y="${G.Ht-4}">${LET[pc(d)]}</text><rect data-cd="${d}" x="${x-15}" y="0" width="30" height="${G.Ht}" fill="transparent" style="cursor:pointer"/>`}
   s+='</svg>';const c=codexSel;
   scr.innerHTML=`<div class="scr"><div class="topbar"><button class="btn sm" data-act="go" data-s="title">← 標題</button><h2>音符圖鑑</h2></div>
   <div class="melbox">${s}</div>
-  <section class="panel" aria-live="polite">${c==null?'<p class="tip">點一個音符聽聽看。同名但高低不同的音會變成金色。</p>':`<p class="meltitle">${SYL[pc(c)]} · ${nm(c)}</p><p class="tip">位置:<b>${POSN[c]}</b>。音名 ${LET[pc(c)]}。</p>`}</section>
+  <section class="panel" aria-live="polite">${c==null?'<p class="tip">點一個音符聽聽看。同名但高低不同的音會變成金色。</p>':`<p class="meltitle">${kn(c)} · ${LET[pc(c)]}</p><p class="tip">位置:<b>${POSN[c]}</b>。音名 ${LET[pc(c)]}。</p>`}</section>
   <section class="panel" style="display:grid;gap:10px"><div class="tbl">${SYL.map((x,p)=>`<div><b>${x}</b><span>${LET[p]}</span></div>`).join('')}</div>
-  <p class="tip"><b>固定 Do</b>:C 永遠唱 Do,不管什麼調。<br><b>五條線</b>由下往上:E G B D F(Mi Sol Si Re Fa)。<br><b>四個間</b>由下往上:F A C E(Fa La Do Mi)。<br><b>地標</b>:中央C 在下加一線;第二線是 G,高音譜號就捲在這條線上;第三間是高音 C。</p>
+  <p class="tip"><b>固定 Do</b>:C 永遠唱 Do,不管什麼調。<br><b>五條線</b>由下往上:E G B D F(Mi Sol Si Re Fa)。<br><b>四個間</b>由下往上:F A C E(Fa La Do Mi)。<br><b>地標</b>:中央 Do 在下加一線;第二線是 Sol,高音譜號就捲在這條線上;第三間是高音 Do。<br><b>上加線</b>:上一間 Sol、上加一線 La、上加一間 Si、上加二線 Do。<br><b>下加線</b>:下一間 Re、下加一線 Do、下加一間 Si、下加二線 La。</p>
   <div class="row"><button class="btn" data-act="scale">▶ 由低到高彈一遍</button></div></section></div>`}
 let EN={type:'read',lv:0};
-const ELV=[{n:'中央C起',r:'C4–G4',lo:0,hi:4},{n:'五線之內',r:'E4–G5',lo:2,hi:11},{n:'含加線',r:'C4–C6',lo:0,hi:14}];
+const ELV=[{n:'五線之內',r:'不用加線',lo:2,hi:10},{n:'加上加線',r:'含上加線',lo:2,hi:14},{n:'全部',r:'上下加線',lo:-2,hi:14}];
 function renderEndless(){const k=`E|${EN.type}|${EN.lv}`;
   scr.innerHTML=`<div class="scr"><div class="topbar"><button class="btn sm" data-act="go" data-s="title">← 標題</button><h2>無盡挑戰</h2></div>
   <section class="panel" style="display:grid;gap:12px"><p class="tip">雜音怪會越來越快,三顆心用完就結束。看你能撐多久!</p>
@@ -305,12 +311,13 @@ function pickD(lo,hi,prev){const w=weakPick(lo,hi);let d;do{d=(w.length&&Math.ra
 function phrase(lo,hi,n){let d=ri(lo,hi);const q=[d];while(q.length<n){const st=[-3,-2,-2,-1,-1,1,1,2,2,3][ri(0,9)];let x=d+st;if(x<lo||x>hi)x=d-st;if(x<lo||x>hi)x=ri(lo,hi);if(x===d)x=d+(d<hi?1:-1);q.push(x);d=x}return q}
 function stat(d,ok){const s=SV.stats[d]||(SV.stats[d]={o:0,m:0});ok?s.o++:s.m++}
 function startStage(i,endless){ac();const st=endless||STAGES[i];
-  B={i,st,end:!!endless,G:geo(st.lo,st.hi),hearts:3,combo:0,maxC:0,score:0,ok:0,bad:0,mons:[],fx:[],spawnLeft:st.cnt||1e9,next:.8,front:null,kills:0,last:null,
+  B={i,st,end:!!endless,G:geo(st.lo,st.hi),hearts:3,combo:0,maxC:0,score:0,ok:0,bad:0,mons:[],fx:[],spawnLeft:st.cnt||1e9,next:1.2,front:null,kills:0,last:null,
      seal:null,sealLeft:st.cnt||0,round:null,hp:st.rounds||0,wait:0,ghost:null,hurtT:0,say:'',sayC:'',paused:false,over:false,t0:performance.now()};
   screen='battle';renderBattle();
   const begin=()=>{B.say=st.type==='hear'||st.type==='sealH'?'仔細聽!':'來了!';updSay();loop()};
   if(!endless&&st.say&&!SV.seen[st.id]){const pro=i===0&&!SV.seen.pro?PROLOGUE.concat(st.say):st.say;SV.seen[st.id]=1;SV.seen.pro=1;save();renderFrame();dialog(pro,begin)}
   else{renderFrame();begin()}}
+function needOct(d){const st=B.st;for(let x=st.lo;x<=st.hi;x++)if(x!==d&&pc(x)===pc(d))return true;return false}
 function isRunner(){return B.st.type==='read'||B.st.type==='hear'}
 function isSeal(){return B.st.type==='sealN'||B.st.type==='sealH'}
 function renderBattle(){const st=B.st,ear=st.type==='hear'||st.type==='sealH'||(st.subs&&st.subs.includes('hear'));
@@ -325,7 +332,7 @@ function renderBattle(){const st=B.st,ear=st.type==='hear'||st.type==='sealH'||(
    <div class="stage ${isSeal()?'live':''}" id="stage"></div>
    <div class="say"><span>${pupuSVG(30)}</span><p id="say">準備好了嗎?</p></div>
    ${input}
-   ${ear?`<div class="tools"><button class="btn sm" data-act="again">▶ 再聽</button><button class="btn sm" data-act="refc">♪ 中央C</button></div>`:''}</div>`;
+   ${ear?`<div class="tools"><button class="btn sm" data-act="again">▶ 再聽</button><button class="btn sm" data-act="refc">♪ 中央 Do</button></div>`:''}</div>`;
   updHud();if(isSeal())bindPlace()}
 function updHud(){if(!B)return;const h=$('#hearts');if(!h)return;
   h.innerHTML='♥'.repeat(B.hearts)+'<i>'+'♥'.repeat(3-B.hearts)+'</i>';$('#score').textContent=B.score;
@@ -359,7 +366,7 @@ function answerKey(p){if(!B||B.over||B.paused||B.wait>0&&B.st.type==='boss')retu
     if(pc(t)===p){r.pos++;play([t]);B.combo++;B.maxC=Math.max(B.maxC,B.combo);B.ok++;stat(t,!r.wr[r.pos-1]);B.fx.push({k:'pop',x:r.xs[r.pos-1],y:B.G.Y(t),t:0,lab:SYL[pc(t)]});
       if(r.pos>=r.q.length){B.hp--;B.score+=40+Math.round(r.left)*3;sfx('boom');B.fx.push({k:'boom',t:0});
         say(B.hp>0?`命中!${B.st.boss}還剩 ${B.hp} 招。`:'打倒了!','good');updHud();
-        if(B.hp<=0){B.round=null;setTimeout(()=>B&&!B.over&&win(),900)}else{B.wait=1.4;B.round.doneT=true}}
+        if(B.hp<=0){B.round=null;setTimeout(()=>B&&!B.over&&win(),900)}else{B.wait=2.2;B.round.doneT=true}}
       else{say(`${SYL[pc(t)]}!下一個。`,'good')}updHud()}
     else{r.wr[r.pos]=1;r.left=Math.max(0,r.left-3);B.combo=0;B.bad++;sfx('no');r.flash=.35;say(`不是 ${SYL[p]},扣 3 秒!`,'bad');updHud()}}}
 
@@ -367,7 +374,7 @@ function answerKey(p){if(!B||B.over||B.paused||B.wait>0&&B.st.type==='boss')retu
 function newSeal(){const st=B.st;const d=pickD(st.lo,st.hi,B.last);B.last=d;B.seal={d,left:st.time,wr:0};B.ghost=null;updPlace();
   if(st.type==='sealH')setTimeout(()=>B&&B.seal&&play([B.seal.d]),250);updHud()}
 function clampD(d){return Math.max(B.G.bot+1,Math.min(B.G.top-1,d))}
-function updPlace(){const g=$('#gtxt'),b=$('#okb');if(!g)return;g.textContent=B.ghost!=null?`${SYL[pc(B.ghost)]} · ${nm(B.ghost)}`:'點譜表選位置,或用 ▼ ▲';b.disabled=B.ghost==null||!B.seal}
+function updPlace(){const g=$('#gtxt'),b=$('#okb');if(!g)return;g.textContent=B.ghost!=null?`${kn(B.ghost)} · ${POSN[B.ghost]}`:'點譜表選位置,或用 ▼ ▲';b.disabled=B.ghost==null||!B.seal}
 function bindPlace(){const w=$('#stage');
   const g=ev=>{const svg=w.querySelector('svg');if(!svg)return null;const r=svg.getBoundingClientRect(),vb=svg.viewBox.baseVal;return clampD(Math.round(B.G.top-(ev.clientY-r.top)*(vb.height/r.height)/H))};
   w.addEventListener('pointerdown',ev=>{if(!B||!B.seal||B.paused)return;ev.preventDefault();try{w.setPointerCapture(ev.pointerId)}catch(e){}B.ghost=g(ev);updPlace()});
@@ -376,10 +383,10 @@ function bindPlace(){const w=$('#stage');
 function nudge(k){if(!B||!B.seal)return;B.ghost=clampD(B.ghost==null?Math.round((B.st.lo+B.st.hi)/2):B.ghost+k);updPlace();play([B.ghost])}
 function commit(){const s=B&&B.seal;if(!s||B.ghost==null||B.paused)return;const g=B.ghost;
   if(g===s.d){B.fx.push({k:'pop',x:SEALX,y:B.G.Y(s.d),t:0,lab:txt(s.d)});play([s.d]);B.combo++;B.maxC=Math.max(B.maxC,B.combo);B.ok++;stat(s.d,s.wr===0);
-    B.score+=15+Math.round(s.left)*2+Math.min(B.combo,20);B.seal=null;B.sealLeft--;B.ghost=null;say(`封印解開!${SYL[pc(s.d)]} 在${POSN[s.d]}。`,'good');heal();updPlace();updHud();
-    if(B.sealLeft<=0)setTimeout(()=>B&&!B.over&&win(),700);else B.wait=1}
+    B.score+=15+Math.round(s.left)*2+Math.min(B.combo,20);B.seal=null;B.sealLeft--;B.ghost=null;say(`封印解開!${kn(s.d)} 在${POSN[s.d]}。`,'good');heal();updPlace();updHud();
+    if(B.sealLeft<=0)setTimeout(()=>B&&!B.over&&win(),900);else B.wait=1.8}
   else{s.wr++;s.left=Math.max(0,s.left-2);B.combo=0;B.bad++;sfx('no');B.fx.push({k:'bad',d:g,t:0});
-    say(pc(g)===pc(s.d)?'唱名對了,但差一個八度!':(g>s.d?'再低一點!':'再高一點!'),'bad');B.ghost=null;updPlace();updHud()}}
+    say(pc(g)===pc(s.d)?(g>s.d?'唱名對了,但要畫在低一點的那個!':'唱名對了,但要畫在高一點的那個!'):(g>s.d?'再低一點!':'再高一點!'),'bad');B.ghost=null;updPlace();updHud()}}
 /* boss */
 function newRound(){const st=B.st,sub=st.subs[(st.rounds-B.hp)%st.subs.length],q=phrase(st.lo,st.hi,st.len);
   const xs=q.map((_,k)=>96+(k+.5)*(220/q.length));B.round={q,xs,sub,pos:0,left:st.time,wr:[],flash:0};
@@ -388,7 +395,7 @@ function newRound(){const st=B.st,sub=st.subs[(st.rounds-B.hp)%st.subs.length],q
 function update(dt){const st=B.st;if(B.hurtT>0)B.hurtT-=dt;
   B.fx=B.fx.filter(f=>(f.t+=dt)<(f.k==='rev'?1.4:.8));
   if(isRunner()){
-    let sp=st.sp,gap=st.gap;if(B.end){sp=st.sp+B.kills*.9;gap=Math.max(1.25,st.gap-B.kills*.035)}
+    let sp=st.sp,gap=st.gap;if(B.end){sp=st.sp+B.kills*.5;gap=Math.max(1.8,st.gap-B.kills*.03)}
     B.next-=dt;if(B.spawnLeft>0&&B.next<=0){spawn();B.spawnLeft--;B.next=gap*(.85+Math.random()*.3);updHud()}
     for(const m of B.mons){m.x-=sp*dt;if(m.flash>0)m.flash-=dt}
     const f=front();if(f&&f.id!==B.front){B.front=f.id;if(st.type==='hear')play([f.d])}
@@ -397,12 +404,12 @@ function update(dt){const st=B.st;if(B.hurtT>0)B.hurtT-=dt;
   else if(isSeal()){if(B.wait>0){B.wait-=dt;if(B.wait<=0&&!B.over)newSeal()}
     else if(!B.seal&&B.sealLeft>0)newSeal();
     else if(B.seal){B.seal.left-=dt;if(B.seal.left<=0){const d=B.seal.d;B.fx.push({k:'rev',x:SEALX,d,t:0});stat(d,false);B.seal=null;B.sealLeft--;updHud();
-      hurt(`時間到!答案是 ${SYL[pc(d)]}(${nm(d)})。`);if(!B.over){if(B.sealLeft<=0)setTimeout(()=>B&&!B.over&&win(),900);else B.wait=1.4}}}
+      hurt(`時間到!答案是 ${kn(d)},在${POSN[d]}。`);if(!B.over){if(B.sealLeft<=0)setTimeout(()=>B&&!B.over&&win(),900);else B.wait=2}}}
     const tb=$('#tmbar');if(tb)tb.style.width=(B.seal?B.seal.left/st.time*100:0)+'%'}
   else{if(B.wait>0){B.wait-=dt;if(B.wait<=0&&!B.over&&B.hp>0)newRound()}
     else if(!B.round&&B.hp>0)newRound();
     else if(B.round&&!B.round.doneT){const r=B.round;r.left-=dt;if(r.flash>0)r.flash-=dt;
-      if(r.left<=0){r.q.slice(r.pos).forEach(d=>stat(d,false));B.round=null;hurt(`${st.boss}的招式打中你了!`);if(!B.over)B.wait=1.2}}
+      if(r.left<=0){r.q.slice(r.pos).forEach(d=>stat(d,false));B.round=null;hurt(`${st.boss}的招式打中你了!`);if(!B.over)B.wait=2}}
     const tb=$('#tmbar');if(tb)tb.style.width=(B.round&&!B.round.doneT?B.round.left/st.time*100:0)+'%'}}
 function renderFrame(){const st=B.st,G=B.G;let s=`<svg viewBox="0 0 ${W} ${G.Ht}" role="img" aria-label="戰鬥譜表" style="overflow:hidden"><g class="${B.hurtT>0?'pupu-hurt':''}">`+staffBase(G,W)+clefG(G)+'</g>';
   if(isRunner()){s+=`<line class="gate" x1="${GATE}" x2="${GATE}" y1="${G.Y(12)}" y2="${G.Y(0)}"/>`;const f=front();
@@ -413,7 +420,10 @@ function renderFrame(){const st=B.st,G=B.G;let s=`<svg viewBox="0 0 ${W} ${G.Ht}
         if(m.wr>=2)s+=noteG(G,m.d,m.x+26,'ghost')}}}
   else if(isSeal()){const sl=B.seal;
     if(sl){const by=24;if(st.type==='sealN'){const main=SV.lab==='let'?LET[pc(sl.d)]:SYL[pc(sl.d)];
-        s+=`<rect class="bub" x="${SEALX-38}" y="${by-16}" width="76" height="38" rx="12"/><text class="bubt" x="${SEALX}" y="${by+4}">${main}</text><text class="bubs" x="${SEALX}" y="${by+17}">${nm(sl.d)}${sl.d===0?' 中央C':''}</text>`}
+        const no=needOct(sl.d),o=oc(sl.d),sub=no?(o>=6?'高高音':o===5?'高音':o<=3?'低音':'中音'):'';
+        s+=`<rect class="bub" x="${SEALX-40}" y="${by-18}" width="80" height="${sub?44:38}" rx="12"/><text class="bubt" x="${SEALX}" y="${by+4}">${main}</text>`;
+        if(no&&o!==4)s+=`<circle cx="${SEALX}" cy="${o>4?by-14:by+8}" r="2.2" fill="#1F2B2D"/>`;
+        if(sub)s+=`<text class="bubs" x="${SEALX}" y="${by+20}">${sub}</text>`}
       else s+=`<rect class="bub" x="${SEALX-30}" y="${by-16}" width="60" height="34" rx="12"/><text class="bubt" x="${SEALX}" y="${by+8}">♪ ?</text>`;
       if(sl.wr>=2)s+=`<ellipse class="guide" cx="${SEALX}" cy="${G.Y(sl.d)}" rx="19" ry="13"/>`;
       if(B.ghost!=null){const y=G.Y(B.ghost);s+=`<line class="gl" x1="${GATE}" x2="${W-6}" y1="${y}" y2="${y}"/>`+noteG(G,B.ghost,SEALX,'ghost',true)}}}
@@ -423,7 +433,7 @@ function renderFrame(){const st=B.st,G=B.G;let s=`<svg viewBox="0 0 ${W} ${G.Ht}
       else{const y=G.Y(6);if(k===r.pos)s+=`<circle class="halo" cx="${x}" cy="${y}" r="20"/>`;s+=`<ellipse class="shadow" cx="${x}" cy="${y}" rx="14" ry="11"/><text class="qm" x="${x}" y="${y+6}">?</text>`}})}}
   for(const f of B.fx){const a=1-f.t/(f.k==='rev'?1.4:.8);
     if(f.k==='pop')s+=`<g opacity="${a}"><circle class="pop" cx="${f.x}" cy="${f.y}" r="${14+f.t*40}"/><text class="poptxt" x="${f.x}" y="${f.y-18-f.t*30}">${f.lab}</text></g>`;
-    else if(f.k==='rev')s+=`<g opacity="${Math.min(1,a*1.6)}">${noteG(G,f.d,f.x,'rev')}<text class="tag b" x="${f.x}" y="${G.Ht-6}">${SYL[pc(f.d)]} ${nm(f.d)}</text></g>`;
+    else if(f.k==='rev')s+=`<g opacity="${Math.min(1,a*1.6)}">${noteG(G,f.d,f.x,'rev')}<text class="tag b" x="${f.x}" y="${G.Ht-6}">${kn(f.d)}</text></g>`;
     else if(f.k==='bad')s+=`<g opacity="${a}">${noteG(G,f.d,SEALX,'bad')}</g>`;
     else if(f.k==='boom')s+=`<circle cx="352" cy="${G.Y(9)-12}" r="${20+f.t*80}" fill="none" stroke="#FF6F59" stroke-width="4" opacity="${a}"/>`}
   const el=$('#stage');if(el)el.innerHTML=s+'</svg>'}
@@ -461,7 +471,7 @@ document.addEventListener('click',e=>{
   else if(a==='set'){const k=b.dataset.k,v=b.dataset.v;if(k==='lab'){SV.lab=v;save();renderTitle()}else if(k==='etype'){EN.type=v;renderEndless()}else if(k==='elv'){EN.lv=+v;renderEndless()}}
   else if(a==='color'){SV.color=!SV.color;save();renderTitle()}
   else if(a==='stage'){ov.innerHTML='';startStage(+b.dataset.i)}
-  else if(a==='endless'){const l=ELV[EN.lv];startStage(-1,{type:EN.type,lo:l.lo,hi:l.hi,sp:EN.type==='read'?26:19,gap:EN.type==='read'?3.2:4.8,endless:true})}
+  else if(a==='endless'){const l=ELV[EN.lv];startStage(-1,{type:EN.type,lo:l.lo,hi:l.hi,sp:EN.type==='read'?17:14,gap:EN.type==='read'?4.6:6.2,endless:true})}
   else if(a==='key')answerKey(+b.dataset.p);
   else if(a==='again'){if(!B)return;if(isRunner()){const f=front();if(f)play([f.d])}else if(isSeal()){if(B.seal)play([B.seal.d])}else if(B.round)play(B.round.sub==='hear'?B.round.q:B.round.q.slice(B.round.pos,B.round.pos+1))}
   else if(a==='refc')play([0]);
@@ -470,7 +480,7 @@ document.addEventListener('click',e=>{
   else if(a==='retry'){ov.innerHTML='';const i=B.i,end=B.end?B.st:null;startStage(i,end)}
   else if(a==='quit'){const end=B&&B.end;B=null;go(end?'endless':'map')}
   else if(a==='mel'){playMel(+b.dataset.i,b.dataset.box||('mel'+b.dataset.i))}
-  else if(a==='scale')play([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],.34)});
+  else if(a==='scale')play([-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],.34)});
 document.addEventListener('keydown',e=>{if(screen!=='battle'||!B||B.over||e.ctrlKey||e.metaKey||e.altKey)return;const k=e.key;
   if(k==='Escape'){pause(!B.paused);return}if(B.paused||ov.innerHTML)return;
   if(isSeal()){if(k==='ArrowUp'){e.preventDefault();nudge(1)}else if(k==='ArrowDown'){e.preventDefault();nudge(-1)}else if(k==='Enter'||k===' '){e.preventDefault();commit()}return}
