@@ -1,40 +1,61 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="0;url=https://wason-web-9051.web.app/sites/think-tank/">
-<link rel="canonical" href="https://wason-web-9051.web.app/sites/think-tank/">
-<title>智庫網站 · 已搬遷至新網址</title>
-<style>
-  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0E2326; color: #EAF2EF; font: 16px/1.6 system-ui, -apple-system, sans-serif; text-align: center; padding: 24px; }
-  .box { max-width: 480px; padding: 32px 24px; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
-  h1 { font-size: 1.25rem; font-weight: 600; margin: 0 0 12px; }
-  p { margin: 0 0 20px; opacity: 0.85; }
-  a { color: #EDB64E; text-decoration: none; word-break: break-all; }
-  a:hover { text-decoration: underline; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>思辨智庫 — 公共政策與社會議題研究門戶</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="box">
-    <h1>《智庫網站》已搬遷</h1>
-    <p>本專案已遷移至全新站點託管服務，正在為您自動跳轉…</p>
-    <p><a href="https://wason-web-9051.web.app/sites/think-tank/">如果沒有自動跳轉，請點擊此處前往</a></p>
-  </div>
-  <script>
-    (async function(){
-      try {
-        if ('serviceWorker' in navigator) {
-          const regs = await navigator.serviceWorker.getRegistrations();
-          await Promise.all(regs.map(r => r.unregister()));
-        }
-        if ('caches' in window) {
-          const keys = await caches.keys();
-          await Promise.all(keys.map(k => caches.delete(k)));
-        }
-      } catch(e) {}
-      location.replace('https://wason-web-9051.web.app/sites/think-tank/');
-    })();
-  </script>
+  <!-- 頂部智庫導航列 -->
+  <header class="tk-header">
+    <div class="tk-header-inner">
+      <a class="tk-brand" href="#">
+        <div class="tk-seal">思</div>
+        <div class="tk-brand-text">
+          <h1>思辨智庫 · 政策推演沙盒</h1>
+          <p>Public Policy Sandbox & Critical Discourse Portal</p>
+        </div>
+      </a>
+      <div class="tk-actions">
+        <a class="tk-btn" href="/sites" title="返回智庫站點目錄">← 站點</a>
+        <button class="tk-btn" id="btn-theme" type="button">🌙 墨夜</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主體區域 -->
+  <main class="tk-container">
+    <!-- 議題挑選橫帶 -->
+    <section class="tk-topic-strip" id="topic-strip"></section>
+
+    <!-- 議題大篇章展示 -->
+    <section class="tk-hero" id="topic-hero"></section>
+
+    <!-- 沙盒功能導航標籤 -->
+    <nav class="tk-nav-tabs">
+      <button class="tk-tab-btn active" data-tab="stakeholders">
+        👥 利害關係人推演 (Stakeholder Dynamics)
+      </button>
+      <button class="tk-tab-btn" data-tab="debate">
+        ⚖️ 論點樹辯論模擬 (Argument Crucible)
+      </button>
+      <button class="tk-tab-btn" data-tab="impact">
+        🎛️ 政策衝擊決策沙盒 (Policy Impact Sandbox)
+      </button>
+    </nav>
+
+    <!-- 沙盒工作台區域 -->
+    <section id="sandbox-stage"></section>
+  </main>
+
+  <footer class="tk-footer">
+    思辨智庫 · 公共政策與社會議題研究門戶 · 國立清華大學學術專案
+  </footer>
+
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
