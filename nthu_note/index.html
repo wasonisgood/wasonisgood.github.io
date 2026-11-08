@@ -1,40 +1,38 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="0;url=https://wason-web-9051.web.app/sites/nthu-note/">
-<link rel="canonical" href="https://wason-web-9051.web.app/sites/nthu-note/">
-<title>清大共筆 · 已搬遷至新網址</title>
-<style>
-  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0E2326; color: #EAF2EF; font: 16px/1.6 system-ui, -apple-system, sans-serif; text-align: center; padding: 24px; }
-  .box { max-width: 480px; padding: 32px 24px; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
-  h1 { font-size: 1.25rem; font-weight: 600; margin: 0 0 12px; }
-  p { margin: 0 0 20px; opacity: 0.85; }
-  a { color: #EDB64E; text-decoration: none; word-break: break-all; }
-  a:hover { text-decoration: underline; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>清大共筆 · NTHU Notes</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="box">
-    <h1>《清大共筆》已搬遷</h1>
-    <p>本專案已遷移至全新站點託管服務，正在為您自動跳轉…</p>
-    <p><a href="https://wason-web-9051.web.app/sites/nthu-note/">如果沒有自動跳轉，請點擊此處前往</a></p>
+  <div class="rd-app" id="app" data-mode="double">
+    <!-- 頂部書櫥工具列 -->
+    <header class="rd-bar" id="rd-bar"></header>
+
+    <!-- 主體三欄區域 -->
+    <div class="rd-body">
+      <!-- 左側章節目錄抽屜 -->
+      <nav class="rd-nav" id="rd-nav"></nav>
+
+      <!-- 中央舞台閱讀 / 編輯區 -->
+      <main class="rd-stage" id="rd-stage"></main>
+
+      <!-- 右側筆記側欄抽屜 -->
+      <aside class="rd-side" id="rd-side"></aside>
+    </div>
+
+    <!-- 選取文字浮動工具條 -->
+    <div class="rd-select-popover" id="rd-popover">
+      <button class="rd-select-btn" id="btn-pop-note"><span>📌</span> 記至共筆</button>
+      <button class="rd-select-btn" id="btn-pop-copy"><span>📋</span> 複製引文</button>
+    </div>
   </div>
-  <script>
-    (async function(){
-      try {
-        if ('serviceWorker' in navigator) {
-          const regs = await navigator.serviceWorker.getRegistrations();
-          await Promise.all(regs.map(r => r.unregister()));
-        }
-        if ('caches' in window) {
-          const keys = await caches.keys();
-          await Promise.all(keys.map(k => caches.delete(k)));
-        }
-      } catch(e) {}
-      location.replace('https://wason-web-9051.web.app/sites/nthu-note/');
-    })();
-  </script>
+
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
